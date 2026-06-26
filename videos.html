@@ -3,14 +3,256 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="The 80s Ladies video vault featuring big hair, neon fashion, retro electronics, mall nostalgia, funny daily thoughts, and product spotlights." />
-  <title>Videos | The 80s Ladies</title>
+  <meta name="description" content="The 80s Ladies Club video vault featuring big hair, neon fashion, retro electronics, mall nostalgia, funny daily thoughts, and product spotlights." />
+  <title>Videos | The 80s Ladies Club Video Vault</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/png" href="images/about-hairspray-profile.png" />
+  <style>
+    .videos-page .page-hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 72vh;
+      display: grid;
+      align-items: center;
+      background:
+        radial-gradient(circle at 16% 18%, rgba(255, 43, 214, 0.28), transparent 32%),
+        radial-gradient(circle at 82% 16%, rgba(0, 229, 255, 0.22), transparent 31%),
+        radial-gradient(circle at 54% 88%, rgba(57, 255, 20, 0.12), transparent 24%),
+        linear-gradient(135deg, #070817 0%, #220a3e 50%, #071126 100%);
+    }
+
+    .videos-page .page-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0, 229, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 43, 214, 0.08) 1px, transparent 1px);
+      background-size: 68px 68px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.72), transparent 82%);
+      pointer-events: none;
+    }
+
+    .video-hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.78fr);
+      gap: clamp(1.5rem, 4vw, 3.5rem);
+      align-items: center;
+      width: min(1180px, 92%);
+      margin: 0 auto;
+      padding: 6rem 0 4rem;
+    }
+
+    .video-hero-copy {
+      text-align: center;
+      display: grid;
+      justify-items: center;
+    }
+
+    .video-hero-copy .button-row {
+      justify-content: center;
+    }
+
+    .video-neon-headline,
+    .neon-video-heading {
+      display: inline-block;
+      background: linear-gradient(90deg, var(--pink), var(--cyan), var(--green));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 22px rgba(255, 43, 214, 0.45), 0 0 34px rgba(0, 229, 255, 0.28);
+      text-transform: uppercase;
+      letter-spacing: 0.035em;
+    }
+
+    .video-neon-headline {
+      font-size: clamp(3rem, 8vw, 7rem);
+      line-height: 0.9;
+      margin: 0 0 1rem;
+    }
+
+    .video-hero-copy .eyebrow {
+      font-size: clamp(1rem, 2.1vw, 1.45rem);
+      letter-spacing: 0.2em;
+      text-shadow: var(--shadow-green);
+      margin-bottom: 1rem;
+    }
+
+    .video-hero-copy .page-copy {
+      max-width: 740px;
+      margin-inline: auto;
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+    }
+
+    .video-hero-showcase {
+      position: relative;
+      min-height: 500px;
+    }
+
+    .video-feature-image {
+      position: absolute;
+      border-radius: 30px;
+      border: 3px solid rgba(255, 255, 255, 0.72);
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 26px 70px rgba(0, 0, 0, 0.55), var(--shadow-pink);
+    }
+
+    .video-feature-image.main {
+      inset: 4% 7% auto auto;
+      width: min(330px, 78vw);
+      aspect-ratio: 0.82;
+      background-image: linear-gradient(135deg, rgba(255,43,214,.14), rgba(0,229,255,.10)), url('images/about-hairspray-profile.png');
+      z-index: 3;
+      transform: rotate(4deg);
+    }
+
+    .video-feature-image.side-one {
+      left: 0;
+      bottom: 6%;
+      width: min(250px, 50vw);
+      aspect-ratio: 0.9;
+      background-image: linear-gradient(135deg, rgba(255,43,214,.16), rgba(0,229,255,.12)), url('images/v2-rock-concert-ladies.jpg');
+      z-index: 2;
+      transform: rotate(-8deg);
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.5), var(--shadow-cyan);
+    }
+
+    .video-feature-image.side-two {
+      right: 0;
+      bottom: 0;
+      width: min(230px, 46vw);
+      aspect-ratio: 1;
+      background-image: linear-gradient(135deg, rgba(255,43,214,.16), rgba(0,229,255,.12)), url('images/v2-car-wash-boombox.jpg');
+      z-index: 1;
+      transform: rotate(8deg);
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.5), var(--shadow-green);
+    }
+
+    .video-badge {
+      position: absolute;
+      left: 8%;
+      top: 8%;
+      z-index: 4;
+      width: 122px;
+      height: 122px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 0.85rem;
+      background: linear-gradient(135deg, var(--pink), var(--purple));
+      color: var(--white);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.78rem;
+      box-shadow: var(--shadow-pink);
+      transform: rotate(-10deg);
+    }
+
+    .video-lane-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .video-lane-card .video-frame {
+      min-height: 270px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-lane-card .video-frame::after {
+      content: "▶";
+      position: absolute;
+      inset: auto 1rem 1rem auto;
+      display: grid;
+      place-items: center;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--green);
+      color: var(--navy);
+      box-shadow: var(--shadow-green);
+      font-weight: 900;
+    }
+
+    .video-lane-card h3 {
+      color: var(--white);
+      text-shadow: 0 0 14px rgba(255, 43, 214, 0.35);
+    }
+
+    .platform-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .platform-card {
+      display: grid;
+      gap: 0.45rem;
+      padding: 1.4rem;
+      border-radius: 24px;
+      background: linear-gradient(145deg, rgba(13,27,61,0.92), rgba(24,7,54,0.88));
+      border: 1px solid rgba(0,229,255,0.35);
+      box-shadow: inset 0 0 24px rgba(255,43,214,0.1);
+      color: var(--white);
+    }
+
+    .platform-card strong {
+      color: var(--cyan);
+      font-size: 1.25rem;
+    }
+
+    .platform-card span {
+      color: var(--muted);
+    }
+
+    @media (max-width: 940px) {
+      .video-hero-inner,
+      .video-lane-grid,
+      .platform-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .video-hero-showcase {
+        min-height: 430px;
+        order: -1;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .video-hero-showcase {
+        min-height: 360px;
+      }
+
+      .video-feature-image.main {
+        width: 240px;
+        right: 8%;
+      }
+
+      .video-feature-image.side-one,
+      .video-feature-image.side-two {
+        width: 165px;
+      }
+
+      .video-badge {
+        width: 90px;
+        height: 90px;
+        font-size: 0.62rem;
+      }
+    }
+  </style>
 </head>
-<body>
+<body class="videos-page">
   <header class="site-header">
-    <a class="brand" href="index.html" aria-label="The 80s Ladies home"><span class="brand-mark">80s</span><span class="brand-text">The 80s Ladies</span></a>
+    <a class="brand" href="index.html" aria-label="The 80s Ladies Club home"><span class="brand-mark">80s</span><span class="brand-text">The 80s Ladies Club</span></a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">☰</button>
     <nav id="site-nav" class="site-nav" aria-label="Main navigation">
       <a href="index.html">Home</a>
@@ -24,12 +266,23 @@
 
   <main>
     <section class="page-hero">
-      <p class="eyebrow">Video Vault</p>
-      <h1>Shorts, reels, and retro mayhem.</h1>
-      <p class="page-copy">Explore the main lanes of The 80s Ladies universe: hairspray chaos, neon fashion, retro electronics, mall nostalgia, funny thoughts, and product spotlights.</p>
-      <div class="button-row">
-        <a class="btn primary" href="https://www.youtube.com/channel/UC9fSL5o2ANB6UnJM-C2evTA">Visit YouTube</a>
-        <a class="btn secondary" href="https://www.tiktok.com/@the.80s.ladies">Watch on TikTok</a>
+      <div class="video-hero-inner">
+        <div class="video-hero-copy">
+          <p class="eyebrow">The Retro Video Vault</p>
+          <h1 class="video-neon-headline">Watch the Chaos.</h1>
+          <p class="page-copy">Big hair disasters, neon fashion, boombox moments, mall memories, product features, and funny daily thoughts from The 80s Ladies Club universe.</p>
+          <div class="button-row">
+            <a class="btn primary" href="https://www.youtube.com/channel/UC9fSL5o2ANB6UnJM-C2evTA">Visit YouTube</a>
+            <a class="btn secondary" href="https://www.tiktok.com/@the.80s.ladies">Watch on TikTok</a>
+            <a class="btn secondary" href="https://www.instagram.com/official80sladies">Follow Instagram</a>
+          </div>
+        </div>
+        <div class="video-hero-showcase" aria-label="The 80s Ladies video imagery">
+          <div class="video-badge">Now Playing</div>
+          <div class="video-feature-image main"></div>
+          <div class="video-feature-image side-one"></div>
+          <div class="video-feature-image side-two"></div>
+        </div>
       </div>
     </section>
 
@@ -37,50 +290,50 @@
       <div class="feature-split">
         <div>
           <p class="eyebrow">Featured Lane</p>
-          <h2>Big hair always gets the front row.</h2>
-          <p>The best-performing 80s Ladies videos can eventually live here as embedded YouTube Shorts or hand-picked TikTok highlights. For now, this section gives the page a stronger visual anchor and points people toward the channels.</p>
+          <h2 class="neon-video-heading">Big hair always gets the front row.</h2>
+          <p>The 80s Ladies videos are built for quick laughs, nostalgia, and shareable retro moments. This page points visitors toward the main channels now, and later we can feature specific Shorts, TikToks, or Reels.</p>
           <div class="button-row">
             <a class="btn primary" href="https://www.youtube.com/channel/UC9fSL5o2ANB6UnJM-C2evTA">Open YouTube</a>
-            <a class="btn secondary" href="https://www.instagram.com/official80sladies">Follow Instagram</a>
+            <a class="btn secondary" href="https://www.tiktok.com/@the.80s.ladies">Open TikTok</a>
           </div>
         </div>
-        <div class="image-slot" style="min-height: 360px; background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.22), rgba(0, 229, 255, 0.12)), url('images/max-volume-poster.png'); background-size: cover; background-position: center;"></div>
+        <div class="image-slot" style="min-height: 420px; background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.22), rgba(0, 229, 255, 0.12)), url('images/v2-rock-concert-ladies.jpg'); background-size: cover; background-position: center;"></div>
       </div>
     </section>
 
     <section class="content-section">
       <div class="section-heading">
-        <p class="eyebrow">Featured Categories</p>
-        <h2>The best kind of 80s trouble</h2>
+        <p class="eyebrow">Video Categories</p>
+        <h2 class="neon-video-heading">Pick your 80s rabbit hole.</h2>
       </div>
-      <div class="card-grid two">
-        <article class="video-card">
-          <div class="video-frame" style="background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.28), rgba(0, 229, 255, 0.14)), url('images/about-hairspray-profile.png'); background-size: cover; background-position: center;"></div>
+      <div class="video-lane-grid">
+        <article class="video-card video-lane-card">
+          <div class="video-frame" style="background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.28), rgba(0, 229, 255, 0.14)), url('images/about-hairspray-profile.png');"></div>
           <h3>Big Hair Emergencies</h3>
           <p>Hairspray disasters, salon chaos, bathroom mirror drama, and gravity-defying 80s hairstyles.</p>
         </article>
-        <article class="video-card">
-          <div class="video-frame"><span>💃 Fashion Vault</span></div>
+        <article class="video-card video-lane-card">
+          <div class="video-frame" style="background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.28), rgba(0, 229, 255, 0.14)), url('images/v2-lightning-earrings.jpg');"></div>
           <h3>Neon Fashion Moments</h3>
           <p>Shoulder pads, earrings, bold makeup, wild outfits, and the kind of confidence only the 80s could deliver.</p>
         </article>
-        <article class="video-card">
-          <div class="video-frame"><span>📼 Retro Tech</span></div>
-          <h3>Boombox and Cassette Energy</h3>
+        <article class="video-card video-lane-card">
+          <div class="video-frame" style="background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.28), rgba(0, 229, 255, 0.14)), url('images/v2-car-wash-boombox.jpg');"></div>
+          <h3>Boombox & Cassette Energy</h3>
           <p>Retro electronics, cassette players, music memories, and product-friendly videos that fit the brand.</p>
         </article>
-        <article class="video-card">
-          <div class="video-frame"><span>🛍️ Mall Memories</span></div>
-          <h3>Mall, Arcade, and Food Court Nostalgia</h3>
-          <p>Shopping trips, mall hair, old-school hangouts, arcade vibes, and the lost art of wandering around all afternoon.</p>
+        <article class="video-card video-lane-card">
+          <div class="video-frame" style="background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.28), rgba(0, 229, 255, 0.14)), url('images/v2-accessories-tote-mall.jpg');"></div>
+          <h3>Mall, Arcade & Food Court Nostalgia</h3>
+          <p>Shopping trips, mall hair, old-school hangouts, arcade vibes, and the lost art of wandering all afternoon.</p>
         </article>
-        <article class="video-card">
-          <div class="video-frame"><span>💬 Daily Thoughts</span></div>
+        <article class="video-card video-lane-card">
+          <div class="video-frame" style="background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.28), rgba(0, 229, 255, 0.14)), url('images/max-volume-poster.png');"></div>
           <h3>80s Ladies Thought of the Day</h3>
           <p>Short, funny, shareable thoughts that keep the community talking across TikTok, YouTube, and Instagram.</p>
         </article>
-        <article class="video-card">
-          <div class="video-frame" style="background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.22), rgba(0, 229, 255, 0.12)), url('images/shop-big-hair-shirt.png'); background-size: cover; background-position: center top;"></div>
+        <article class="video-card video-lane-card">
+          <div class="video-frame" style="background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.28), rgba(0, 229, 255, 0.14)), url('images/v2-can-cooler-lake.jpg');"></div>
           <h3>Retro Product Features</h3>
           <p>Videos that blend 80s nostalgia with Etsy products, TikTok Showcase items, and gift ideas.</p>
         </article>
@@ -88,18 +341,22 @@
     </section>
 
     <section class="content-section alt-section">
-      <p class="eyebrow">Future Upgrade</p>
-      <h2>Embedded videos can come next.</h2>
-      <p>The page is now ready for your strongest posts. Later we can embed specific YouTube Shorts, feature your best TikToks, or build a simple “best of” section for new visitors.</p>
-      <div class="button-row">
-        <a class="btn primary" href="https://www.youtube.com/channel/UC9fSL5o2ANB6UnJM-C2evTA">Open YouTube Channel</a>
-        <a class="btn secondary" href="https://www.tiktok.com/@the.80s.ladies">Open TikTok</a>
+      <div class="section-heading">
+        <p class="eyebrow">Watch Everywhere</p>
+        <h2 class="neon-video-heading">Follow the video trail.</h2>
+        <p>The videos live across the main social channels. The website is the official hub that ties everything together.</p>
+      </div>
+      <div class="platform-strip">
+        <a class="platform-card" href="https://www.youtube.com/channel/UC9fSL5o2ANB6UnJM-C2evTA"><strong>YouTube</strong><span>Shorts, community posts, playlists, and longer-term growth.</span></a>
+        <a class="platform-card" href="https://www.tiktok.com/@the.80s.ladies"><strong>TikTok</strong><span>Daily chaos, fast nostalgia, product stories, and viral 80s energy.</span></a>
+        <a class="platform-card" href="https://www.instagram.com/official80sladies"><strong>Instagram</strong><span>Reels, captions, reposts, and visual brand polish.</span></a>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>© <span id="year"></span> The 80s Ladies. Video embeds coming soon.</p>
+  <footer class="site-footer upgraded-footer">
+    <div class="footer-logo">The 80s Ladies Club</div>
+    <p>© <span id="year"></span> The 80s Ladies Club. Watch the nostalgia, then tease the hair.</p>
   </footer>
 
   <script src="js/script.js"></script>
