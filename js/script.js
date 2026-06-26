@@ -32,6 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const shopHeroCopy = document.querySelector('.shop-hero-copy');
     const shopHeroText = document.querySelector('.shop-hero-copy .page-copy');
     const shopHeroButtons = document.querySelector('.shop-hero-copy .button-row');
+    const accessoriesButton = document.querySelector('a[href*="section_id=59007461"]');
+    const accessoriesCard = accessoriesButton ? accessoriesButton.closest('.product-card') : null;
+    const accessoriesImage = accessoriesCard ? accessoriesCard.querySelector('.product-image') : null;
 
     if (shopHeroCopy) {
       shopHeroCopy.style.textAlign = 'center';
@@ -46,6 +49,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (shopHeroButtons) {
       shopHeroButtons.style.justifyContent = 'center';
+    }
+
+    if (accessoriesImage) {
+      accessoriesImage.style.backgroundImage = "linear-gradient(135deg, rgba(255,43,214,.22), rgba(0,229,255,.12)), url('images/v2-accessories-tote-mall.jpg')";
+      accessoriesImage.style.backgroundSize = 'cover';
+      accessoriesImage.style.backgroundRepeat = 'no-repeat';
+      accessoriesImage.style.backgroundPosition = 'center';
     }
   }
 });
