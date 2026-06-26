@@ -66,4 +66,14 @@ document.addEventListener('DOMContentLoaded', () => {
       accessoriesImage.style.backgroundPosition = 'center';
     }
   }
+
+  if (document.body.classList.contains('videos-page')) {
+    const platformIntro = Array.from(document.querySelectorAll('.section-heading p')).find((paragraph) =>
+      paragraph.textContent.trim() === 'The videos live across the main social channels. The website is the official hub that ties everything together.'
+    );
+
+    if (platformIntro) {
+      platformIntro.textContent = 'Follow the big hair trail across YouTube, TikTok, and Instagram — then come back here when you want the whole 80s Ladies Club universe in one neon-lit place.';
+    }
+  }
 });
