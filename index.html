@@ -7,6 +7,163 @@
   <title>The 80s Ladies Club | Big Hair. Neon Nights. Endless Nostalgia.</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/png" href="images/about-hairspray-profile.png" />
+  <style>
+    .home-hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.72fr);
+      align-items: center;
+      gap: clamp(1.5rem, 4vw, 3rem);
+      text-align: left;
+    }
+
+    .hero-copy-block {
+      display: grid;
+      justify-items: start;
+    }
+
+    .hero-eyebrow {
+      width: 100%;
+      text-align: center;
+      font-size: clamp(1rem, 2vw, 1.45rem);
+      letter-spacing: 0.2em;
+      margin-bottom: 1.2rem;
+      color: var(--green);
+      text-shadow: var(--shadow-green);
+    }
+
+    .hero-brand-stack {
+      position: relative;
+      min-height: 520px;
+      display: grid;
+      place-items: center;
+    }
+
+    .profile-orbit {
+      position: relative;
+      z-index: 3;
+      width: min(330px, 78vw);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.18), rgba(0, 229, 255, 0.14)), url('images/about-hairspray-profile.png');
+      background-size: cover;
+      background-position: center;
+      border: 4px solid rgba(255, 43, 214, 0.7);
+      box-shadow: var(--shadow-pink), var(--shadow-cyan), 0 30px 80px rgba(0, 0, 0, 0.48);
+    }
+
+    .profile-orbit::after {
+      content: "";
+      position: absolute;
+      inset: -16px;
+      border-radius: 50%;
+      border: 1px solid rgba(57, 255, 20, 0.55);
+      box-shadow: var(--shadow-green);
+      pointer-events: none;
+    }
+
+    .floating-polaroid {
+      position: absolute;
+      z-index: 2;
+      width: min(210px, 34vw);
+      aspect-ratio: 0.72;
+      border-radius: 18px;
+      background-size: cover;
+      background-position: center;
+      border: 3px solid rgba(248, 247, 255, 0.86);
+      box-shadow: 0 20px 55px rgba(0, 0, 0, 0.55), 0 0 20px rgba(255, 43, 214, 0.35);
+      transition: transform 220ms ease, box-shadow 220ms ease;
+    }
+
+    .floating-polaroid:hover {
+      transform: translateY(-6px) rotate(0deg) scale(1.03);
+      box-shadow: var(--shadow-cyan), 0 24px 60px rgba(0, 0, 0, 0.58);
+    }
+
+    .floating-polaroid.one {
+      left: 0;
+      top: 0.4rem;
+      transform: rotate(-8deg);
+      background-image: linear-gradient(135deg, rgba(255,43,214,.12), rgba(0,229,255,.08)), url('images/v2-car-wash-boombox.jpg');
+    }
+
+    .floating-polaroid.two {
+      right: 0;
+      bottom: 0.4rem;
+      transform: rotate(7deg);
+      background-image: linear-gradient(135deg, rgba(255,43,214,.12), rgba(0,229,255,.08)), url('images/v2-rock-concert-ladies.jpg');
+    }
+
+    .hero-badge {
+      position: absolute;
+      z-index: 4;
+      right: 4%;
+      top: 9%;
+      display: grid;
+      place-items: center;
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      text-align: center;
+      padding: 0.75rem;
+      background: linear-gradient(135deg, var(--pink), var(--purple));
+      color: var(--white);
+      font-weight: 900;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      box-shadow: var(--shadow-pink);
+      transform: rotate(10deg);
+    }
+
+    .image-collage .car-wash-card {
+      background-image: linear-gradient(135deg, rgba(255,43,214,.18), rgba(0,229,255,.12)), url('images/v2-car-wash-boombox.jpg') !important;
+    }
+
+    .image-collage .concert-card {
+      background-image: linear-gradient(135deg, rgba(255,43,214,.18), rgba(0,229,255,.12)), url('images/v2-rock-concert-ladies.jpg') !important;
+    }
+
+    .image-collage .mug-card {
+      background-image: linear-gradient(135deg, rgba(255,43,214,.18), rgba(0,229,255,.12)), url('images/v2-mug-hairspray-bad-decisions.jpg') !important;
+    }
+
+    @media (max-width: 940px) {
+      .home-hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-copy-block {
+        justify-items: center;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-brand-stack {
+        min-height: 430px;
+        order: -1;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero-brand-stack {
+        min-height: 360px;
+      }
+
+      .floating-polaroid {
+        width: 150px;
+        opacity: 0.85;
+      }
+
+      .hero-badge {
+        width: 86px;
+        height: 86px;
+        font-size: 0.62rem;
+      }
+    }
+  </style>
 </head>
 <body class="home-page">
   <header class="site-header">
@@ -33,14 +190,23 @@
       <div class="hero-palm hero-palm-right" aria-hidden="true">🌴</div>
 
       <div class="home-hero-inner">
-        <p class="eyebrow">Official home of</p>
-        <h1 class="neon-title"><span>The 80s</span><span>Ladies Club</span></h1>
-        <p class="hero-tagline">Big Hair. Neon Nights. Endless Nostalgia.</p>
-        <p class="hero-copy">Welcome to the official home of The 80s Ladies Club. Relive the fun, fashion, music, mall memories, wild hairstyles, and unforgettable moments that made the 1980s legendary.</p>
-        <div class="button-row hero-buttons">
-          <a class="btn primary" href="videos.html">💖 Watch Videos</a>
-          <a class="btn secondary" href="shop.html">🛍️ Shop Etsy</a>
-          <a class="btn secondary" href="https://www.instagram.com/official80sladies">📷 Follow Instagram</a>
+        <div class="hero-copy-block">
+          <p class="eyebrow hero-eyebrow">Official Home Of</p>
+          <h1 class="neon-title"><span>The 80s</span><span>Ladies Club</span></h1>
+          <p class="hero-tagline">Big Hair. Neon Nights. Endless Nostalgia.</p>
+          <p class="hero-copy">Welcome to the official home of The 80s Ladies Club. Relive the fun, fashion, music, mall memories, wild hairstyles, and unforgettable moments that made the 1980s legendary.</p>
+          <div class="button-row hero-buttons">
+            <a class="btn primary" href="videos.html">💖 Watch Videos</a>
+            <a class="btn secondary" href="shop.html">🛍️ Shop Etsy</a>
+            <a class="btn secondary" href="https://www.instagram.com/official80sladies">📷 Follow Instagram</a>
+          </div>
+        </div>
+
+        <div class="hero-brand-stack" aria-label="The 80s Ladies Club brand imagery">
+          <div class="floating-polaroid one" aria-hidden="true"></div>
+          <div class="profile-orbit" aria-label="The 80s Ladies profile image"></div>
+          <div class="floating-polaroid two" aria-hidden="true"></div>
+          <div class="hero-badge">Big Hair Forever</div>
         </div>
       </div>
 
@@ -58,10 +224,10 @@
         <p>Whether you lived through it or simply wish you had, pull up a chair, tease that hair, and make yourself at home.</p>
       </div>
       <div class="image-collage" aria-label="The 80s Ladies visual collage">
-        <div class="collage-card wide" style="background-image: linear-gradient(135deg, rgba(255,43,214,.18), rgba(0,229,255,.12)), url('images/homepage-hero-banner.png');"></div>
+        <div class="collage-card wide car-wash-card"></div>
         <div class="collage-card" style="background-image: linear-gradient(135deg, rgba(255,43,214,.18), rgba(0,229,255,.12)), url('images/about-hairspray-profile.png');"></div>
-        <div class="collage-card tall" style="background-image: linear-gradient(135deg, rgba(255,43,214,.18), rgba(0,229,255,.12)), url('images/max-volume-poster.png');"></div>
-        <div class="collage-card" style="background-image: linear-gradient(135deg, rgba(255,43,214,.18), rgba(0,229,255,.12)), url('images/shop-big-hair-shirt.png');"></div>
+        <div class="collage-card tall concert-card"></div>
+        <div class="collage-card mug-card"></div>
       </div>
     </section>
 
@@ -80,12 +246,12 @@
           <p>Hairspray disasters, salon chaos, and gravity-defying hair with maximum neon attitude.</p>
         </article>
         <article class="video-card showcase-card">
-          <div class="video-frame feature-thumb"><span>💃<br>Neon Fashion</span></div>
+          <div class="video-frame feature-thumb" style="background-image: linear-gradient(135deg, rgba(255,43,214,.26), rgba(0,229,255,.14)), url('images/v2-lightning-earrings.jpg'); background-size: cover; background-position: center;"><span class="play-pill">▶</span></div>
           <h3>Fashion Moments</h3>
           <p>Shoulder pads, earrings, bold makeup, and outfits that refused to whisper.</p>
         </article>
         <article class="video-card showcase-card">
-          <div class="video-frame feature-thumb" style="background-image: linear-gradient(135deg, rgba(255,43,214,.26), rgba(0,229,255,.14)), url('images/max-volume-poster.png');"><span class="play-pill">▶</span></div>
+          <div class="video-frame feature-thumb" style="background-image: linear-gradient(135deg, rgba(255,43,214,.26), rgba(0,229,255,.14)), url('images/v2-rock-concert-ladies.jpg');"><span class="play-pill">▶</span></div>
           <h3>Retro Mayhem</h3>
           <p>Boomboxes, malls, music memories, and funny throwback moments from the 80s universe.</p>
         </article>
@@ -112,7 +278,7 @@
           <a href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=59007457">Shop Apparel</a>
         </article>
         <article class="product-card showcase-card">
-          <div class="product-image">☕<br>Mugs</div>
+          <div class="product-image" style="background-image: linear-gradient(135deg, rgba(255,43,214,.22), rgba(0,229,255,.12)), url('images/v2-mug-hairspray-bad-decisions.jpg'); background-size: cover; background-position: center;"></div>
           <h3>Mugs</h3>
           <p>Caffeine, nostalgia, and neon.</p>
           <a href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=58990802">Shop Mugs</a>
