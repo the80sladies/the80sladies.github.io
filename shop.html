@@ -3,14 +3,231 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Shop 80s-inspired apparel, mugs, stickers, posters, can coolers, and accessories from The 80s Ladies on Etsy." />
-  <title>Shop | The 80s Ladies</title>
+  <meta name="description" content="Shop 80s-inspired apparel, mugs, stickers, posters, can coolers, and accessories from The 80s Ladies Club on Etsy." />
+  <title>Shop | The 80s Ladies Club Gift Shop</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/png" href="images/about-hairspray-profile.png" />
+  <style>
+    .shop-page .page-hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 70vh;
+      display: grid;
+      align-items: center;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(255, 43, 214, 0.28), transparent 32%),
+        radial-gradient(circle at 84% 10%, rgba(0, 229, 255, 0.22), transparent 30%),
+        radial-gradient(circle at 74% 78%, rgba(57, 255, 20, 0.12), transparent 28%),
+        linear-gradient(135deg, #090b24 0%, #210a3d 48%, #070817 100%);
+    }
+
+    .shop-page .page-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0, 229, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 43, 214, 0.08) 1px, transparent 1px);
+      background-size: 70px 70px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.65), transparent 78%);
+      pointer-events: none;
+    }
+
+    .shop-hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.78fr);
+      gap: clamp(1.5rem, 4vw, 3.5rem);
+      align-items: center;
+      width: min(1180px, 92%);
+      margin: 0 auto;
+      padding: 6rem 0 4rem;
+    }
+
+    .shop-hero-copy {
+      text-align: left;
+    }
+
+    .shop-neon-headline,
+    .neon-shop-heading {
+      display: inline-block;
+      background: linear-gradient(90deg, var(--pink), var(--cyan), var(--green));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 22px rgba(255, 43, 214, 0.45), 0 0 34px rgba(0, 229, 255, 0.28);
+      text-transform: uppercase;
+      letter-spacing: 0.035em;
+    }
+
+    .shop-neon-headline {
+      font-size: clamp(3rem, 8vw, 7rem);
+      line-height: 0.9;
+      margin: 0 0 1rem;
+    }
+
+    .shop-hero-copy .page-copy {
+      max-width: 720px;
+      margin-left: 0;
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+    }
+
+    .shop-hero-showcase {
+      position: relative;
+      min-height: 500px;
+    }
+
+    .shop-feature-image {
+      position: absolute;
+      border-radius: 30px;
+      border: 3px solid rgba(255, 255, 255, 0.72);
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 26px 70px rgba(0, 0, 0, 0.55), var(--shadow-pink);
+    }
+
+    .shop-feature-image.main {
+      inset: 4% 10% auto auto;
+      width: min(330px, 78vw);
+      aspect-ratio: 0.82;
+      background-image: linear-gradient(135deg, rgba(255,43,214,.14), rgba(0,229,255,.10)), url('images/v2-mug-hairspray-bad-decisions.jpg');
+      z-index: 3;
+      transform: rotate(4deg);
+    }
+
+    .shop-feature-image.side-one {
+      left: 0;
+      bottom: 6%;
+      width: min(245px, 50vw);
+      aspect-ratio: 0.9;
+      background-image: linear-gradient(135deg, rgba(255,43,214,.16), rgba(0,229,255,.12)), url('images/v2-can-cooler-lake.jpg');
+      z-index: 2;
+      transform: rotate(-8deg);
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.5), var(--shadow-cyan);
+    }
+
+    .shop-feature-image.side-two {
+      right: 0;
+      bottom: 0;
+      width: min(230px, 46vw);
+      aspect-ratio: 1;
+      background-image: linear-gradient(135deg, rgba(255,43,214,.16), rgba(0,229,255,.12)), url('images/v2-sticker-boombox.jpg');
+      z-index: 1;
+      transform: rotate(8deg);
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.5), var(--shadow-green);
+    }
+
+    .shop-badge {
+      position: absolute;
+      left: 10%;
+      top: 8%;
+      z-index: 4;
+      width: 118px;
+      height: 118px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 0.85rem;
+      background: linear-gradient(135deg, var(--pink), var(--purple));
+      color: var(--white);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.78rem;
+      box-shadow: var(--shadow-pink);
+      transform: rotate(-10deg);
+    }
+
+    .shop-intro-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .shop-mini-card {
+      padding: 1.2rem;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.055);
+      border: 1px solid rgba(0, 229, 255, 0.18);
+      box-shadow: 0 18px 55px rgba(0, 0, 0, 0.24);
+    }
+
+    .shop-mini-card strong {
+      display: block;
+      color: var(--cyan);
+      margin-bottom: 0.35rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .shop-category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .shop-category-card .product-image {
+      min-height: 260px;
+    }
+
+    .shop-category-card h3 {
+      color: var(--white);
+      text-shadow: 0 0 14px rgba(255, 43, 214, 0.35);
+    }
+
+    @media (max-width: 940px) {
+      .shop-hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .shop-hero-copy {
+        text-align: center;
+      }
+
+      .shop-hero-copy .page-copy {
+        margin-inline: auto;
+      }
+
+      .shop-hero-showcase {
+        min-height: 430px;
+      }
+
+      .shop-intro-strip,
+      .shop-category-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .shop-hero-showcase {
+        min-height: 360px;
+      }
+
+      .shop-feature-image.main {
+        width: 240px;
+        right: 8%;
+      }
+
+      .shop-feature-image.side-one,
+      .shop-feature-image.side-two {
+        width: 165px;
+      }
+
+      .shop-badge {
+        width: 90px;
+        height: 90px;
+        font-size: 0.62rem;
+      }
+    }
+  </style>
 </head>
-<body>
+<body class="shop-page">
   <header class="site-header">
-    <a class="brand" href="index.html" aria-label="The 80s Ladies home"><span class="brand-mark">80s</span><span class="brand-text">The 80s Ladies</span></a>
+    <a class="brand" href="index.html" aria-label="The 80s Ladies Club home"><span class="brand-mark">80s</span><span class="brand-text">The 80s Ladies Club</span></a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">☰</button>
     <nav id="site-nav" class="site-nav" aria-label="Main navigation">
       <a href="index.html">Home</a>
@@ -24,85 +241,110 @@
 
   <main>
     <section class="page-hero">
-      <p class="eyebrow">Shop the vibe</p>
-      <h1>Retro finds for neon souls.</h1>
-      <p class="page-copy">Shop The 80s Ladies collection on Etsy: bold apparel, retro mugs, stickers, posters, can coolers, and accessories inspired by big hair, neon nights, and unforgettable 80s energy.</p>
-      <div class="button-row">
-        <a class="btn primary" href="https://the80sladies.etsy.com">Visit the Etsy Store</a>
-      </div>
-    </section>
-
-    <section class="content-section alt-section">
-      <div class="feature-split">
-        <div class="image-slot" style="min-height: 420px; background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.16), rgba(0, 229, 255, 0.12)), url('images/shop-big-hair-shirt.png'); background-size: cover; background-position: center top;"></div>
-        <div>
-          <p class="eyebrow">Featured Etsy Style</p>
-          <h2>Big Hair Don't Care energy.</h2>
-          <p>This mockup is perfect for showing the product side of The 80s Ladies brand: wearable, loud, funny, and instantly recognizable.</p>
+      <div class="shop-hero-inner">
+        <div class="shop-hero-copy">
+          <p class="eyebrow">The Official Gift Shop</p>
+          <h1 class="shop-neon-headline">Shop the Neon.</h1>
+          <p class="page-copy">Step into The 80s Ladies Club gift shop: apparel, mugs, stickers, posters, can coolers, and accessories packed with big-hair confidence, hairspray humor, and retro attitude.</p>
           <div class="button-row">
-            <a class="btn primary" href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=59007457">Shop Apparel</a>
+            <a class="btn primary" href="https://the80sladies.etsy.com">Open Etsy Store</a>
+            <a class="btn secondary" href="#collections">Browse Collections</a>
           </div>
+        </div>
+        <div class="shop-hero-showcase" aria-label="Featured 80s Ladies products">
+          <div class="shop-badge">Retro Finds</div>
+          <div class="shop-feature-image main"></div>
+          <div class="shop-feature-image side-one"></div>
+          <div class="shop-feature-image side-two"></div>
         </div>
       </div>
     </section>
 
-    <section class="content-section">
+    <section class="content-section alt-section">
+      <div class="section-heading">
+        <p class="eyebrow">Why Shop Here?</p>
+        <h2 class="neon-shop-heading">Made for big-hair believers.</h2>
+      </div>
+      <div class="shop-intro-strip">
+        <div class="shop-mini-card">
+          <strong>Brand Vibe</strong>
+          <p>Every item is built around the same 80s Ladies energy people recognize from the videos.</p>
+        </div>
+        <div class="shop-mini-card">
+          <strong>Gift Friendly</strong>
+          <p>Easy retro gifts for 80s kids, nostalgia fans, big-hair queens, and neon souls.</p>
+        </div>
+        <div class="shop-mini-card">
+          <strong>Sold on Etsy</strong>
+          <p>This site shows the collections. Etsy handles checkout, details, and current availability.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="collections" class="content-section">
       <div class="section-heading">
         <p class="eyebrow">Product Collections</p>
-        <h2>Made for the 80s Ladies Club</h2>
+        <h2 class="neon-shop-heading">Pick your retro treasure.</h2>
       </div>
-      <div class="card-grid three">
-        <article class="product-card">
+      <div class="shop-category-grid">
+        <article class="product-card shop-category-card">
           <div class="product-image" style="background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.22), rgba(0, 229, 255, 0.12)), url('images/shop-big-hair-shirt.png'); background-size: cover; background-position: center top;"></div>
           <h3>Retro Graphic Apparel</h3>
           <p>Bold 80s Ladies designs made for big-hair confidence, neon attitude, and everyday throwback style.</p>
           <a class="btn secondary" href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=59007457">Shop Apparel</a>
         </article>
-        <article class="product-card">
-          <div class="product-image">☕<br>Mugs</div>
+        <article class="product-card shop-category-card">
+          <div class="product-image" style="background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.22), rgba(0, 229, 255, 0.12)), url('images/v2-mug-hairspray-bad-decisions.jpg'); background-size: cover; background-position: center;"></div>
           <h3>Neon Morning Mugs</h3>
           <p>Coffee cups for people who believe caffeine, hairspray, and nostalgia belong in the same routine.</p>
           <a class="btn secondary" href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=58990802">Shop Mugs</a>
         </article>
-        <article class="product-card">
-          <div class="product-image">📼<br>Stickers</div>
+        <article class="product-card shop-category-card">
+          <div class="product-image" style="background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.22), rgba(0, 229, 255, 0.12)), url('images/v2-sticker-boombox.jpg'); background-size: cover; background-position: center;"></div>
           <h3>Throwback Stickers</h3>
-          <p>Cassette-inspired, funny, and retro designs ready for laptops, notebooks, water bottles, and mini coolers.</p>
+          <p>Cassette-inspired, funny, and retro designs ready for laptops, notebooks, bottles, and mini coolers.</p>
           <a class="btn secondary" href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=58990800">Shop Stickers</a>
         </article>
-        <article class="product-card">
-          <div class="product-image">🥤<br>Can Coolers</div>
+        <article class="product-card shop-category-card">
+          <div class="product-image" style="background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.22), rgba(0, 229, 255, 0.12)), url('images/v2-can-cooler-lake.jpg'); background-size: cover; background-position: center;"></div>
           <h3>80s Can Coolers</h3>
-          <p>Neon drink coolers for cookouts, lake days, porch nights, and anyone who still loves an 80s party vibe.</p>
+          <p>Neon drink coolers for cookouts, lake days, porch nights, and anyone who loves an 80s party vibe.</p>
           <a class="btn secondary" href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=59038197">Shop Can Coolers</a>
         </article>
-        <article class="product-card">
+        <article class="product-card shop-category-card">
           <div class="product-image" style="background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.22), rgba(0, 229, 255, 0.12)), url('images/max-volume-poster.png'); background-size: cover; background-position: center;"></div>
           <h3>Retro Wall Posters</h3>
           <p>Wall art made for glam rooms, nostalgia corners, creative spaces, and bedrooms that need more neon.</p>
           <a class="btn secondary" href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=59036339">Shop Posters</a>
         </article>
-        <article class="product-card">
-          <div class="product-image">🛍️<br>Accessories</div>
+        <article class="product-card shop-category-card">
+          <div class="product-image" style="background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.22), rgba(0, 229, 255, 0.12)), url('images/club-logo.png'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
           <h3>80s Ladies Accessories</h3>
-          <p>Reusable totes and other accessories for shopping, errands, flea markets, thrift trips, and hauling around your retro personality.</p>
+          <p>Reusable totes and accessories for shopping, errands, flea markets, thrift trips, and carrying your retro personality.</p>
           <a class="btn secondary" href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=59007461">Shop Accessories</a>
         </article>
       </div>
     </section>
 
     <section class="content-section alt-section">
-      <p class="eyebrow">Etsy Store</p>
-      <h2>Want the full collection?</h2>
-      <p>All current products live on Etsy. This website is the official brand hub, while Etsy handles the shopping, checkout, and product details.</p>
-      <div class="button-row">
-        <a class="btn primary" href="https://the80sladies.etsy.com">Open Etsy Store</a>
+      <div class="feature-split">
+        <div class="image-slot" style="min-height: 420px; background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.16), rgba(0, 229, 255, 0.12)), url('images/v2-car-wash-boombox.jpg'); background-size: cover; background-position: center;"></div>
+        <div>
+          <p class="eyebrow">Full Etsy Collection</p>
+          <h2 class="neon-shop-heading">Take the club with you.</h2>
+          <p>All current products live on Etsy. This website is the official brand hub, while Etsy handles the shopping, checkout, shipping details, and product availability.</p>
+          <div class="button-row">
+            <a class="btn primary" href="https://the80sladies.etsy.com">Open Etsy Store</a>
+            <a class="btn secondary" href="index.html">Back to Home</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>© <span id="year"></span> The 80s Ladies. Shop the nostalgia on Etsy.</p>
+  <footer class="site-footer upgraded-footer">
+    <div class="footer-logo">The 80s Ladies Club</div>
+    <p>© <span id="year"></span> The 80s Ladies Club. Shop the nostalgia on Etsy.</p>
   </footer>
 
   <script src="js/script.js"></script>
