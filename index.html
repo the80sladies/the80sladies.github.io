@@ -18,17 +18,54 @@
 
     .hero-copy-block {
       display: grid;
-      justify-items: start;
+      justify-items: center;
+      text-align: center;
+    }
+
+    .hero-lockup {
+      width: min(760px, 100%);
+      margin-inline: auto;
+      padding: clamp(1.1rem, 2.2vw, 1.7rem);
+      border-radius: 30px;
+      background: linear-gradient(145deg, rgba(3, 8, 22, 0.42), rgba(24, 7, 54, 0.36));
+      border: 1px solid rgba(0, 229, 255, 0.22);
+      box-shadow: inset 0 0 40px rgba(255, 43, 214, 0.08), 0 24px 80px rgba(0, 0, 0, 0.22);
     }
 
     .hero-eyebrow {
       width: 100%;
       text-align: center;
-      font-size: clamp(1rem, 2vw, 1.45rem);
-      letter-spacing: 0.2em;
-      margin-bottom: 1.2rem;
+      font-size: clamp(1.05rem, 2.15vw, 1.6rem);
+      letter-spacing: 0.26em;
+      margin: 0 0 0.85rem;
       color: var(--green);
       text-shadow: var(--shadow-green);
+    }
+
+    .neon-title.hero-title-refined {
+      display: grid;
+      gap: 0.08em;
+      justify-items: center;
+      font-size: clamp(3rem, 8.5vw, 7.8rem);
+      line-height: 0.82;
+      letter-spacing: 0.035em;
+    }
+
+    .neon-title.hero-title-refined .title-small {
+      font-size: 0.74em;
+      letter-spacing: 0.08em;
+    }
+
+    .neon-title.hero-title-refined .title-big {
+      font-size: 1em;
+    }
+
+    .neon-title.hero-title-refined .title-club {
+      font-size: 0.58em;
+      letter-spacing: 0.22em;
+      padding-left: 0.22em;
+      color: var(--cyan);
+      text-shadow: var(--shadow-cyan), 0 0 30px rgba(255, 43, 214, 0.7);
     }
 
     .hero-brand-stack {
@@ -191,8 +228,10 @@
 
       <div class="home-hero-inner">
         <div class="hero-copy-block">
-          <p class="eyebrow hero-eyebrow">Official Home Of</p>
-          <h1 class="neon-title"><span>The 80s</span><span>Ladies Club</span></h1>
+          <div class="hero-lockup">
+            <p class="eyebrow hero-eyebrow">Official Home Of</p>
+            <h1 class="neon-title hero-title-refined"><span class="title-small">The 80s</span><span class="title-big">Ladies</span><span class="title-club">Club</span></h1>
+          </div>
           <p class="hero-tagline">Big Hair. Neon Nights. Endless Nostalgia.</p>
           <p class="hero-copy">Welcome to the official home of The 80s Ladies Club. Relive the fun, fashion, music, mall memories, wild hairstyles, and unforgettable moments that made the 1980s legendary.</p>
           <div class="button-row hero-buttons">
@@ -284,7 +323,7 @@
           <a href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=58990802">Shop Mugs</a>
         </article>
         <article class="product-card showcase-card">
-          <div class="product-image">📼<br>Stickers</div>
+          <div class="product-image" style="background-image: linear-gradient(135deg, rgba(255,43,214,.22), rgba(0,229,255,.12)), url('images/v2-sticker-boombox.jpg'); background-size: cover; background-position: center;"></div>
           <h3>Stickers</h3>
           <p>Small gifts with big 80s attitude.</p>
           <a href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=58990800">Shop Stickers</a>
@@ -296,7 +335,7 @@
           <a href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=59036339">Shop Posters</a>
         </article>
         <article class="product-card showcase-card">
-          <div class="product-image">🥤<br>Coolers</div>
+          <div class="product-image" style="background-image: linear-gradient(135deg, rgba(255,43,214,.22), rgba(0,229,255,.12)), url('images/v2-can-cooler-lake.jpg'); background-size: cover; background-position: center;"></div>
           <h3>Can Coolers</h3>
           <p>For porch nights and retro parties.</p>
           <a href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=59038197">Shop Coolers</a>
