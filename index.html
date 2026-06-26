@@ -81,6 +81,68 @@
       text-transform: uppercase;
     }
 
+    .hero-palm {
+      display: none;
+    }
+
+    .hero-retro-icon {
+      position: absolute;
+      z-index: 1;
+      display: grid;
+      place-items: center;
+      width: clamp(76px, 8vw, 132px);
+      height: clamp(76px, 8vw, 132px);
+      border-radius: 28px;
+      font-size: clamp(2.4rem, 5vw, 4.8rem);
+      background: radial-gradient(circle at 30% 20%, rgba(255, 43, 214, 0.22), rgba(0, 229, 255, 0.08) 45%, rgba(3, 8, 22, 0.04) 70%);
+      border: 1px solid rgba(0, 229, 255, 0.16);
+      box-shadow: 0 0 28px rgba(255, 43, 214, 0.16), 0 0 36px rgba(0, 229, 255, 0.12);
+      opacity: 0.42;
+      filter: saturate(1.25);
+      pointer-events: none;
+      animation: floatRetro 8s ease-in-out infinite;
+    }
+
+    .hero-retro-icon.cassette {
+      left: 3%;
+      top: 34%;
+      transform: rotate(-12deg);
+      color: var(--pink);
+    }
+
+    .hero-retro-icon.spray {
+      left: 9%;
+      bottom: 15%;
+      transform: rotate(10deg);
+      animation-delay: -2s;
+      color: var(--green);
+    }
+
+    .hero-retro-icon.boombox {
+      right: 5%;
+      top: 36%;
+      transform: rotate(9deg);
+      animation-delay: -4s;
+      color: var(--cyan);
+    }
+
+    .hero-retro-icon.tape-two {
+      right: 11%;
+      bottom: 16%;
+      transform: rotate(-10deg);
+      animation-delay: -6s;
+      color: var(--pink);
+    }
+
+    @keyframes floatRetro {
+      0%, 100% {
+        translate: 0 0;
+      }
+      50% {
+        translate: 0 -18px;
+      }
+    }
+
     .hero-brand-stack {
       position: relative;
       min-height: 520px;
@@ -212,6 +274,14 @@
         height: 86px;
         font-size: 0.62rem;
       }
+
+      .hero-retro-icon {
+        width: 68px;
+        height: 68px;
+        border-radius: 18px;
+        font-size: 2.2rem;
+        opacity: 0.28;
+      }
     }
   </style>
 </head>
@@ -236,8 +306,10 @@
     <section class="home-hero" aria-label="Welcome to The 80s Ladies Club">
       <div class="hero-stars" aria-hidden="true"></div>
       <div class="hero-grid" aria-hidden="true"></div>
-      <div class="hero-palm hero-palm-left" aria-hidden="true">🌴</div>
-      <div class="hero-palm hero-palm-right" aria-hidden="true">🌴</div>
+      <div class="hero-retro-icon cassette" aria-hidden="true">📼</div>
+      <div class="hero-retro-icon spray" aria-hidden="true">🧴</div>
+      <div class="hero-retro-icon boombox" aria-hidden="true">📻</div>
+      <div class="hero-retro-icon tape-two" aria-hidden="true">💿</div>
 
       <div class="home-hero-inner">
         <div class="hero-copy-block">
