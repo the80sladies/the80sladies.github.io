@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (document.body.classList.contains('shop-page')) {
     const shopHeroCopy = document.querySelector('.shop-hero-copy');
+    const shopHeroEyebrow = document.querySelector('.shop-hero-copy .eyebrow');
     const shopHeroText = document.querySelector('.shop-hero-copy .page-copy');
     const shopHeroButtons = document.querySelector('.shop-hero-copy .button-row');
     const accessoriesButton = document.querySelector('a[href*="section_id=59007461"]');
@@ -40,6 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
       shopHeroCopy.style.textAlign = 'center';
       shopHeroCopy.style.display = 'grid';
       shopHeroCopy.style.justifyItems = 'center';
+    }
+
+    if (shopHeroEyebrow) {
+      shopHeroEyebrow.style.fontSize = 'clamp(1rem, 2.1vw, 1.45rem)';
+      shopHeroEyebrow.style.letterSpacing = '0.2em';
+      shopHeroEyebrow.style.textShadow = 'var(--shadow-green)';
+      shopHeroEyebrow.style.marginBottom = '1rem';
     }
 
     if (shopHeroText) {
