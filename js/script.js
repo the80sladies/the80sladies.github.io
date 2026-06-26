@@ -1,5 +1,5 @@
 // The 80s Ladies Club site JavaScript
-// Handles mobile navigation, dynamic year, and subtle homepage polish.
+// Handles mobile navigation, dynamic year, and subtle site polish.
 
 document.addEventListener('DOMContentLoaded', () => {
   const navToggle = document.querySelector('.nav-toggle');
@@ -26,5 +26,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateHeader();
     window.addEventListener('scroll', updateHeader, { passive: true });
+  }
+
+  if (document.body.classList.contains('shop-page')) {
+    const shopHeroCopy = document.querySelector('.shop-hero-copy');
+    const shopHeroText = document.querySelector('.shop-hero-copy .page-copy');
+    const shopHeroButtons = document.querySelector('.shop-hero-copy .button-row');
+
+    if (shopHeroCopy) {
+      shopHeroCopy.style.textAlign = 'center';
+      shopHeroCopy.style.display = 'grid';
+      shopHeroCopy.style.justifyItems = 'center';
+    }
+
+    if (shopHeroText) {
+      shopHeroText.style.marginLeft = 'auto';
+      shopHeroText.style.marginRight = 'auto';
+    }
+
+    if (shopHeroButtons) {
+      shopHeroButtons.style.justifyContent = 'center';
+    }
   }
 });
