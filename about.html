@@ -3,14 +3,222 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="About The 80s Ladies, a neon 80s nostalgia brand celebrating big hair, retro fashion, mall memories, music, humor, and female-focused throwback style." />
-  <title>About | The 80s Ladies</title>
+  <meta name="description" content="About The 80s Ladies Club, a neon 80s nostalgia brand celebrating big hair, retro fashion, mall memories, music, humor, and female-focused throwback style." />
+  <title>About | The 80s Ladies Club</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/png" href="images/about-hairspray-profile.png" />
+  <style>
+    .about-page .page-hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 72vh;
+      display: grid;
+      align-items: center;
+      background:
+        radial-gradient(circle at 14% 18%, rgba(255, 43, 214, 0.3), transparent 32%),
+        radial-gradient(circle at 84% 15%, rgba(0, 229, 255, 0.22), transparent 31%),
+        radial-gradient(circle at 70% 84%, rgba(57, 255, 20, 0.12), transparent 25%),
+        linear-gradient(135deg, #070817 0%, #220a3e 50%, #071126 100%);
+    }
+
+    .about-page .page-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0, 229, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 43, 214, 0.08) 1px, transparent 1px);
+      background-size: 68px 68px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.72), transparent 82%);
+      pointer-events: none;
+    }
+
+    .about-hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.78fr);
+      gap: clamp(1.5rem, 4vw, 3.5rem);
+      align-items: center;
+      width: min(1180px, 92%);
+      margin: 0 auto;
+      padding: 6rem 0 4rem;
+    }
+
+    .about-hero-copy {
+      text-align: center;
+      display: grid;
+      justify-items: center;
+    }
+
+    .about-hero-copy .button-row {
+      justify-content: center;
+    }
+
+    .about-neon-headline,
+    .neon-about-heading {
+      display: inline-block;
+      background: linear-gradient(90deg, var(--pink), var(--cyan), var(--green));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 22px rgba(255, 43, 214, 0.45), 0 0 34px rgba(0, 229, 255, 0.28);
+      text-transform: uppercase;
+      letter-spacing: 0.035em;
+    }
+
+    .about-neon-headline {
+      font-size: clamp(3rem, 8vw, 7rem);
+      line-height: 0.9;
+      margin: 0 0 1rem;
+    }
+
+    .about-hero-copy .eyebrow {
+      font-size: clamp(1rem, 2.1vw, 1.45rem);
+      letter-spacing: 0.2em;
+      text-shadow: var(--shadow-green);
+      margin-bottom: 1rem;
+    }
+
+    .about-hero-copy .page-copy {
+      max-width: 760px;
+      margin-inline: auto;
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+    }
+
+    .about-hero-showcase {
+      position: relative;
+      min-height: 500px;
+    }
+
+    .about-feature-image {
+      position: absolute;
+      border-radius: 30px;
+      border: 3px solid rgba(255, 255, 255, 0.72);
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 26px 70px rgba(0, 0, 0, 0.55), var(--shadow-pink);
+    }
+
+    .about-feature-image.main {
+      inset: 4% 8% auto auto;
+      width: min(330px, 78vw);
+      aspect-ratio: 0.82;
+      background-image: linear-gradient(135deg, rgba(255,43,214,.14), rgba(0,229,255,.10)), url('images/about-hairspray-profile.png');
+      z-index: 3;
+      transform: rotate(4deg);
+    }
+
+    .about-feature-image.side-one {
+      left: 0;
+      bottom: 6%;
+      width: min(250px, 50vw);
+      aspect-ratio: 0.9;
+      background-image: linear-gradient(135deg, rgba(255,43,214,.16), rgba(0,229,255,.12)), url('images/v2-lightning-earrings.jpg');
+      z-index: 2;
+      transform: rotate(-8deg);
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.5), var(--shadow-cyan);
+    }
+
+    .about-feature-image.side-two {
+      right: 0;
+      bottom: 0;
+      width: min(230px, 46vw);
+      aspect-ratio: 1;
+      background-image: linear-gradient(135deg, rgba(255,43,214,.16), rgba(0,229,255,.12)), url('images/v2-rock-concert-ladies.jpg');
+      z-index: 1;
+      transform: rotate(8deg);
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.5), var(--shadow-green);
+    }
+
+    .about-badge {
+      position: absolute;
+      left: 8%;
+      top: 8%;
+      z-index: 4;
+      width: 122px;
+      height: 122px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 0.85rem;
+      background: linear-gradient(135deg, var(--pink), var(--purple));
+      color: var(--white);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.78rem;
+      box-shadow: var(--shadow-pink);
+      transform: rotate(-10deg);
+    }
+
+    .story-panel {
+      padding: clamp(1.5rem, 3vw, 2.4rem);
+      border-radius: 30px;
+      background: linear-gradient(145deg, rgba(13, 27, 61, 0.94), rgba(24, 7, 54, 0.88));
+      border: 1px solid rgba(0, 229, 255, 0.35);
+      box-shadow: 0 18px 70px rgba(0,0,0,0.38), inset 0 0 32px rgba(255, 43, 214, 0.08);
+    }
+
+    .about-values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .about-values-grid .feature-card h3 {
+      color: var(--white);
+      text-shadow: 0 0 14px rgba(255, 43, 214, 0.35);
+    }
+
+    .about-final-quote {
+      font-size: clamp(1.35rem, 3vw, 2.25rem);
+      font-weight: 900;
+      color: var(--white);
+      text-shadow: var(--shadow-cyan);
+      line-height: 1.2;
+      margin: 0 0 1rem;
+    }
+
+    @media (max-width: 940px) {
+      .about-hero-inner,
+      .about-values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-hero-showcase {
+        min-height: 430px;
+        order: -1;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .about-hero-showcase {
+        min-height: 360px;
+      }
+
+      .about-feature-image.main {
+        width: 240px;
+        right: 8%;
+      }
+
+      .about-feature-image.side-one,
+      .about-feature-image.side-two {
+        width: 165px;
+      }
+
+      .about-badge {
+        width: 90px;
+        height: 90px;
+        font-size: 0.62rem;
+      }
+    }
+  </style>
 </head>
-<body>
+<body class="about-page">
   <header class="site-header">
-    <a class="brand" href="index.html" aria-label="The 80s Ladies home"><span class="brand-mark">80s</span><span class="brand-text">The 80s Ladies</span></a>
+    <a class="brand" href="index.html" aria-label="The 80s Ladies Club home"><span class="brand-mark">80s</span><span class="brand-text">The 80s Ladies Club</span></a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">☰</button>
     <nav id="site-nav" class="site-nav" aria-label="Main navigation">
       <a href="index.html">Home</a>
@@ -24,85 +232,108 @@
 
   <main>
     <section class="page-hero">
-      <p class="eyebrow">About the brand</p>
-      <h1>A neon love letter to 80s ladies everywhere.</h1>
-      <p class="page-copy">The 80s Ladies is a retro nostalgia brand built around big hair, bold fashion, music memories, mall culture, and the funny little moments that made the decade unforgettable.</p>
-      <div class="button-row">
-        <a class="btn primary" href="videos.html">Explore the Video Vault</a>
-        <a class="btn secondary" href="shop.html">Shop the Collection</a>
+      <div class="about-hero-inner">
+        <div class="about-hero-copy">
+          <p class="eyebrow">About the Club</p>
+          <h1 class="about-neon-headline">Welcome to the Club.</h1>
+          <p class="page-copy">The official story behind The 80s Ladies Club — big hair, neon nights, mall memories, retro chaos, and the women who made the 1980s unforgettable.</p>
+          <div class="button-row">
+            <a class="btn primary" href="videos.html">Explore the Video Vault</a>
+            <a class="btn secondary" href="shop.html">Shop the Gift Shop</a>
+          </div>
+        </div>
+        <div class="about-hero-showcase" aria-label="The 80s Ladies Club brand imagery">
+          <div class="about-badge">Big Hair Forever</div>
+          <div class="about-feature-image main"></div>
+          <div class="about-feature-image side-one"></div>
+          <div class="about-feature-image side-two"></div>
+        </div>
       </div>
     </section>
 
     <section class="content-section alt-section">
       <div class="about-story-grid">
         <div class="image-slot about-profile-image round" style="background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.16), rgba(0, 229, 255, 0.12)), url('images/about-hairspray-profile.png'); background-size: cover; background-position: center;"></div>
-        <div>
-          <p class="eyebrow">The Story</p>
-          <h2>Born from hairspray, neon, and nostalgia.</h2>
-          <p>The 80s Ladies started as a celebration of a very specific feeling: loud colors, dramatic hair, cassette-tape energy, glam confidence, and the kind of humor that makes people say, “I remember that.”</p>
-          <p>It is not just about looking backward. It is about keeping the best parts of the 80s alive in a modern way through short videos, retro-inspired products, community posts, and future blog stories.</p>
-          <p>This website is the official home base for that universe. Social media is where the daily fun happens, Etsy is where the products live, and this site brings everything together in one neon-lit place.</p>
+        <div class="story-panel">
+          <p class="eyebrow">What It Is</p>
+          <h2 class="neon-about-heading">A neon love letter to 80s ladies everywhere.</h2>
+          <p>The 80s Ladies Club is a retro nostalgia world celebrating the fashion, music, hairstyles, humor, malls, electronics, and everyday memories of the 1980s.</p>
+          <p>It is built around the kind of details people remember instantly: hairspray clouds in the bathroom, giant earrings, shoulder pads, phone cords, cassette tapes, mall trips, boomboxes, big attitudes, and outfits that refused to be quiet.</p>
+          <p>Social media is where the daily fun happens. Etsy is where the retro gifts live. This website is the official clubhouse that brings the whole neon universe together.</p>
         </div>
       </div>
     </section>
 
     <section class="content-section">
       <div class="section-heading">
-        <p class="eyebrow">What The 80s Ladies Stands For</p>
-        <h2>Big personality. Bigger hair.</h2>
+        <p class="eyebrow">Why It Exists</p>
+        <h2 class="neon-about-heading">Because the 80s had a feeling.</h2>
       </div>
-      <div class="card-grid three">
-        <article class="feature-card">
+      <div class="feature-split">
+        <div>
+          <p>The 80s were loud, funny, colorful, dramatic, and completely unforgettable. The hair was bigger, the music was brighter, the malls felt like worlds of their own, and even ordinary moments had personality.</p>
+          <p>The 80s Ladies Club exists to bring that feeling back in a modern way — through short videos, funny throwback moments, community posts, retro-inspired products, and a growing online home for anyone who loves the decade.</p>
+        </div>
+        <div class="image-slot" style="min-height: 390px; background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.18), rgba(0, 229, 255, 0.12)), url('images/v2-car-wash-boombox.jpg'); background-size: cover; background-position: center;"></div>
+      </div>
+    </section>
+
+    <section class="content-section alt-section">
+      <div class="section-heading">
+        <p class="eyebrow">The Brand Personality</p>
+        <h2 class="neon-about-heading">Big personality. Bigger hair.</h2>
+      </div>
+      <div class="about-values-grid">
+        <article class="feature-card showcase-card">
           <div class="card-icon">💋</div>
-          <h3>Female-focused nostalgia</h3>
-          <p>Fashion, beauty, attitude, humor, and 80s memories centered around the iconic energy of bold retro women.</p>
+          <h3>Big Hair Energy</h3>
+          <p>Confidence, glamour, hairspray, attitude, and a little bit of beautiful over-the-top drama.</p>
         </article>
-        <article class="feature-card">
+        <article class="feature-card showcase-card">
           <div class="card-icon">📼</div>
-          <h3>Authentic retro feeling</h3>
-          <p>Cassette tapes, boomboxes, malls, music videos, big earrings, shoulder pads, and the glow of a decade that had no chill.</p>
+          <h3>Neon Nostalgia</h3>
+          <p>Cassette tapes, boomboxes, malls, music videos, bold colors, and the glow of a decade that had no chill.</p>
         </article>
-        <article class="feature-card">
+        <article class="feature-card showcase-card">
           <div class="card-icon">😂</div>
-          <h3>Humor with heart</h3>
-          <p>The brand is funny, but it is also warm. It is built for people who miss the little details, not just the big trends.</p>
+          <h3>Everyday Chaos</h3>
+          <p>Funny little moments people remember: tangled phone cords, wild outfits, bathroom mirror battles, and hair that would not quit.</p>
         </article>
-        <article class="feature-card">
-          <div class="card-icon">📺</div>
-          <h3>Short-form entertainment</h3>
-          <p>TikTok, YouTube Shorts, Instagram Reels, and future embedded videos keep the brand alive across platforms.</p>
-        </article>
-        <article class="feature-card">
-          <div class="card-icon">🛍️</div>
-          <h3>Products with personality</h3>
-          <p>Merch and gift ideas inspired by neon nights, big hair, cassette culture, mall memories, and retro style.</p>
-        </article>
-        <article class="feature-card">
-          <div class="card-icon">✨</div>
-          <h3>A growing universe</h3>
-          <p>The long-term vision includes videos, blogs, products, community ideas, newsletters, and more ways to celebrate the 80s Ladies world.</p>
-        </article>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="feature-split">
+        <div class="image-slot contain" style="min-height: 360px; background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.18), rgba(0, 229, 255, 0.12)), url('images/club-logo.png'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+        <div>
+          <p class="eyebrow">The Mission</p>
+          <h2 class="neon-about-heading">Keep the nostalgia alive.</h2>
+          <p>The mission is simple: make people smile, spark memories, celebrate 80s style, and build a fun retro community around the women, fashion, music, products, and everyday chaos of the decade.</p>
+          <p>The 80s Ladies Club is still growing, but the direction is clear: more videos, more community moments, more retro products, more stories, and more reasons to say, “I remember that.”</p>
+        </div>
       </div>
     </section>
 
     <section class="content-section alt-section">
       <div class="feature-split">
         <div>
-          <p class="eyebrow">The Mission</p>
-          <h2>Keep the nostalgia alive.</h2>
-          <p>The mission is simple: make people smile, spark memories, celebrate 80s style, and build a fun retro community around the women, fashion, music, products, and everyday chaos of the decade.</p>
+          <p class="eyebrow">Join the Club</p>
+          <p class="about-final-quote">Pull up a chair, tease that hair, and stay awhile.</p>
+          <p>Follow the videos, browse the gift shop, share the memories, and make yourself at home in the neon-lit world of The 80s Ladies Club.</p>
           <div class="button-row">
-            <a class="btn primary" href="https://www.instagram.com/official80sladies">Follow on Instagram</a>
-            <a class="btn secondary" href="https://www.youtube.com/channel/UC9fSL5o2ANB6UnJM-C2evTA">Watch on YouTube</a>
+            <a class="btn primary" href="videos.html">Watch Videos</a>
+            <a class="btn secondary" href="https://the80sladies.etsy.com">Shop Etsy</a>
+            <a class="btn secondary" href="https://www.instagram.com/official80sladies">Follow Instagram</a>
           </div>
         </div>
-        <div class="image-slot contain" style="min-height: 320px; background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.18), rgba(0, 229, 255, 0.12)), url('images/club-logo.png'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+        <div class="image-slot" style="min-height: 360px; background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.18), rgba(0, 229, 255, 0.12)), url('images/v2-accessories-tote-mall.jpg'); background-size: cover; background-position: center;"></div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>© <span id="year"></span> The 80s Ladies. Big hair forever.</p>
+  <footer class="site-footer upgraded-footer">
+    <div class="footer-logo">The 80s Ladies Club</div>
+    <p>© <span id="year"></span> The 80s Ladies Club. Big hair forever.</p>
   </footer>
 
   <script src="js/script.js"></script>
