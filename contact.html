@@ -86,7 +86,18 @@
     }
 
     .contact-hero-copy .button-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 240px));
+      gap: 1rem;
       justify-content: center;
+      align-items: center;
+      margin-top: 1.35rem;
+    }
+
+    .contact-hero-copy .button-row .btn {
+      width: 100%;
+      justify-content: center;
+      text-align: center;
     }
 
     .contact-hero-image {
@@ -185,6 +196,10 @@
       .contact-hero-image {
         min-height: 360px;
       }
+
+      .contact-hero-copy .button-row {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -212,6 +227,8 @@
           <div class="button-row">
             <a class="btn primary" href="https://www.tiktok.com/@the.80s.ladies">Open TikTok</a>
             <a class="btn secondary" href="https://www.instagram.com/official80sladies">Open Instagram</a>
+            <a class="btn secondary" href="https://www.youtube.com/channel/UC9fSL5o2ANB6UnJM-C2evTA">Open YouTube</a>
+            <a class="btn secondary" href="https://www.buymeacoffee.com/the80sladies">Buy The Ladies a Coffee</a>
           </div>
         </div>
         <div class="contact-hero-image" aria-label="80s lady tangled in a phone cord"></div>
