@@ -88,6 +88,27 @@ document.addEventListener('DOMContentLoaded', () => {
       featuredLaneButtons.appendChild(instagramButton);
     }
 
+    const featuredImage = Array.from(document.querySelectorAll('.feature-split .image-slot')).find((slot) =>
+      slot.getAttribute('style')?.includes('v2-rock-concert-ladies.jpg')
+    );
+
+    if (featuredImage) {
+      featuredImage.style.cursor = 'pointer';
+      featuredImage.setAttribute('role', 'link');
+      featuredImage.setAttribute('tabindex', '0');
+      featuredImage.setAttribute('aria-label', 'Watch this 80s Ladies TikTok post');
+      const openFeaturedTikTok = () => {
+        window.location.href = 'https://www.tiktok.com/@the.80s.ladies/video/7651281118699851039';
+      };
+      featuredImage.addEventListener('click', openFeaturedTikTok);
+      featuredImage.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openFeaturedTikTok();
+        }
+      });
+    }
+
     const playlistLinks = {
       'Big Hair Emergencies': {
         url: 'https://www.youtube.com/watch?v=q0APn6bj6bQ&list=PLhWH_tOZ8lWLMjh0X0FH0jM36Xagm_OoQ',
