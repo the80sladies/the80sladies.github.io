@@ -75,5 +75,64 @@ document.addEventListener('DOMContentLoaded', () => {
     if (platformIntro) {
       platformIntro.textContent = 'Follow the big hair trail across YouTube, TikTok, and Instagram — then come back here when you want the whole 80s Ladies Club universe in one neon-lit place.';
     }
+
+    const playlistLinks = {
+      'Big Hair Emergencies': {
+        url: 'https://www.youtube.com/watch?v=q0APn6bj6bQ&list=PLhWH_tOZ8lWLMjh0X0FH0jM36Xagm_OoQ',
+        label: 'Watch Big Hair Playlist'
+      },
+      'Neon Fashion Moments': {
+        url: 'https://www.youtube.com/watch?v=LJP0NV4eMcw&list=PLhWH_tOZ8lWIDY3bHovmVXf2eAs8sYK8s',
+        label: 'Watch Fashion Playlist'
+      },
+      'Boombox & Cassette Energy': {
+        url: 'https://www.youtube.com/watch?v=_m2uuKvPdyM&list=PLhWH_tOZ8lWLY5jnHIk86KeXN8fxcOh9t',
+        label: 'Watch Shoulder Pads Playlist',
+        newTitle: 'Shoulder Pads Gone Wild',
+        newCopy: 'Oversized shoulder pads, bold outfits, dramatic entrances, and the kind of fashion confidence only the 80s could get away with.'
+      }
+    };
+
+    document.querySelectorAll('.video-lane-card').forEach((card) => {
+      const title = card.querySelector('h3');
+      const copy = card.querySelector('p');
+      if (!title) return;
+
+      const setup = playlistLinks[title.textContent.trim()];
+      if (!setup) return;
+
+      if (setup.newTitle) {
+        title.textContent = setup.newTitle;
+      }
+
+      if (setup.newCopy && copy) {
+        copy.textContent = setup.newCopy;
+      }
+
+      card.style.cursor = 'pointer';
+      card.setAttribute('role', 'link');
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('aria-label', setup.label);
+
+      const button = document.createElement('a');
+      button.className = 'btn secondary';
+      button.href = setup.url;
+      button.textContent = setup.label;
+      button.style.marginTop = '1rem';
+      button.addEventListener('click', (event) => event.stopPropagation());
+      card.appendChild(button);
+
+      const openPlaylist = () => {
+        window.location.href = setup.url;
+      };
+
+      card.addEventListener('click', openPlaylist);
+      card.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openPlaylist();
+        }
+      });
+    });
   }
 });
