@@ -95,12 +95,26 @@ document.addEventListener('DOMContentLoaded', () => {
       row.querySelector('a[href*="youtube.com/channel"]') && row.querySelector('a[href*="tiktok.com/@the.80s.ladies"]')
     );
 
+    if (featuredLaneButtons) {
+      featuredLaneButtons.style.justifyContent = 'center';
+      featuredLaneButtons.style.maxWidth = '560px';
+    }
+
     if (featuredLaneButtons && !featuredLaneButtons.querySelector('a[href*="instagram.com/official80sladies"]')) {
       const instagramButton = document.createElement('a');
-      instagramButton.className = 'btn secondary';
+      instagramButton.className = 'btn secondary featured-instagram-button';
       instagramButton.href = 'https://www.instagram.com/official80sladies';
       instagramButton.textContent = 'Open Instagram';
       featuredLaneButtons.appendChild(instagramButton);
+    }
+
+    const featuredInstagramButton = featuredLaneButtons?.querySelector('a[href*="instagram.com/official80sladies"]');
+    if (featuredInstagramButton) {
+      featuredInstagramButton.classList.add('featured-instagram-button');
+      featuredInstagramButton.style.flexBasis = '100%';
+      featuredInstagramButton.style.maxWidth = '270px';
+      featuredInstagramButton.style.marginLeft = 'auto';
+      featuredInstagramButton.style.marginRight = 'auto';
     }
 
     const featuredImage = Array.from(document.querySelectorAll('.feature-split .image-slot')).find((slot) =>
