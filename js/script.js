@@ -90,6 +90,22 @@ document.addEventListener('DOMContentLoaded', () => {
         label: 'Watch Shoulder Pads Playlist',
         newTitle: 'Shoulder Pads Gone Wild',
         newCopy: 'Oversized shoulder pads, bold outfits, dramatic entrances, and the kind of fashion confidence only the 80s could get away with.'
+      },
+      'Mall, Arcade & Food Court Nostalgia': {
+        url: 'https://www.youtube.com/watch?v=4xm4D6w88KA&list=PLhWH_tOZ8lWL_0aaE0e0XZJpUpjNP2iHQ',
+        label: 'Watch Rockin’ Playlist',
+        newTitle: 'Rockin’ Through the 80s',
+        newCopy: 'Big hair, loud guitars, neon lights, stage energy, and the kind of rock-and-roll attitude that made the 80s impossible to ignore.'
+      },
+      '80s Ladies Thought of the Day': {
+        url: 'https://www.youtube.com/watch?v=JSdym55iuw4&list=PLhWH_tOZ8lWIJaaVsiuSd4BfTRS0EjFZ3',
+        label: 'Watch Phone Cord Playlist',
+        newTitle: 'Phone Cord Emergencies',
+        newCopy: 'Tangled cords, dramatic calls, kitchen-wall phones, and the kind of 80s communication chaos only a landline could create.'
+      },
+      'Retro Product Features': {
+        url: 'https://www.tiktok.com/@the.80s.ladies/video/7652886761936260383',
+        label: 'Watch Product Feature'
       }
     };
 
@@ -114,13 +130,15 @@ document.addEventListener('DOMContentLoaded', () => {
       card.setAttribute('tabindex', '0');
       card.setAttribute('aria-label', setup.label);
 
-      const button = document.createElement('a');
-      button.className = 'btn secondary';
-      button.href = setup.url;
-      button.textContent = setup.label;
-      button.style.marginTop = '1rem';
-      button.addEventListener('click', (event) => event.stopPropagation());
-      card.appendChild(button);
+      if (!card.querySelector('.video-category-button')) {
+        const button = document.createElement('a');
+        button.className = 'btn secondary video-category-button';
+        button.href = setup.url;
+        button.textContent = setup.label;
+        button.style.marginTop = '1rem';
+        button.addEventListener('click', (event) => event.stopPropagation());
+        card.appendChild(button);
+      }
 
       const openPlaylist = () => {
         window.location.href = setup.url;
