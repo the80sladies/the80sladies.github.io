@@ -76,6 +76,21 @@ document.addEventListener('DOMContentLoaded', () => {
       platformIntro.textContent = 'Follow the big hair trail across YouTube, TikTok, and Instagram — then come back here when you want the whole 80s Ladies Club universe in one neon-lit place.';
     }
 
+    const platformDescriptions = {
+      YouTube: 'Binge the big-hair playlists, neon shorts, community posts, and retro chaos all in one place.',
+      TikTok: 'Fast laughs, wild hairspray moments, product stories, and daily 80s madness made for scrolling.',
+      Instagram: 'Reels, glam shots, captions, reposts, and neon eye candy for the whole 80s Ladies universe.'
+    };
+
+    document.querySelectorAll('.platform-card').forEach((card) => {
+      const platformName = card.querySelector('strong')?.textContent.trim();
+      const description = card.querySelector('span');
+
+      if (platformName && description && platformDescriptions[platformName]) {
+        description.textContent = platformDescriptions[platformName];
+      }
+    });
+
     const featuredLaneButtons = Array.from(document.querySelectorAll('.feature-split .button-row')).find((row) =>
       row.querySelector('a[href*="youtube.com/channel"]') && row.querySelector('a[href*="tiktok.com/@the.80s.ladies"]')
     );
