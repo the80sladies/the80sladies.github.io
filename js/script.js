@@ -76,6 +76,16 @@ document.addEventListener('DOMContentLoaded', () => {
       finalHeadline.style.lineHeight = '0.95';
       finalHeadline.style.marginBottom = '1rem';
     }
+
+    const whyImage = Array.from(document.querySelectorAll('.about-page .image-slot')).find((slot) =>
+      slot.getAttribute('style')?.includes('v2-car-wash-boombox.jpg')
+    );
+
+    if (whyImage) {
+      whyImage.style.backgroundImage = "linear-gradient(135deg, rgba(255,43,214,.18), rgba(0,229,255,.12)), url('images/v2-about-why-rock-glam.jpg')";
+      whyImage.style.backgroundSize = 'cover';
+      whyImage.style.backgroundPosition = 'center 20%';
+    }
   }
 
   if (document.body.classList.contains('home-page')) {
