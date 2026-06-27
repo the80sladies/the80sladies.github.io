@@ -112,7 +112,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const playlistLinks = {
       'Big Hair Emergencies': {
         url: 'https://www.youtube.com/watch?v=q0APn6bj6bQ&list=PLhWH_tOZ8lWLMjh0X0FH0jM36Xagm_OoQ',
-        label: 'Watch Big Hair Playlist'
+        label: 'Watch Big Hair Playlist',
+        image: 'images/v2-video-big-hair-emergencies.jpg',
+        position: 'center'
       },
       'Neon Fashion Moments': {
         url: 'https://www.youtube.com/watch?v=LJP0NV4eMcw&list=PLhWH_tOZ8lWIDY3bHovmVXf2eAs8sYK8s',
@@ -122,13 +124,17 @@ document.addEventListener('DOMContentLoaded', () => {
         url: 'https://www.youtube.com/watch?v=_m2uuKvPdyM&list=PLhWH_tOZ8lWLY5jnHIk86KeXN8fxcOh9t',
         label: 'Watch Shoulder Pads Playlist',
         newTitle: 'Shoulder Pads Gone Wild',
-        newCopy: 'Oversized shoulder pads, bold outfits, dramatic entrances, and the kind of fashion confidence only the 80s could get away with.'
+        newCopy: 'Oversized shoulder pads, bold outfits, dramatic entrances, and the kind of fashion confidence only the 80s could get away with.',
+        image: 'images/v2-video-shoulder-pads-gone-wild.jpg',
+        position: 'center'
       },
       'Mall, Arcade & Food Court Nostalgia': {
         url: 'https://www.youtube.com/watch?v=4xm4D6w88KA&list=PLhWH_tOZ8lWL_0aaE0e0XZJpUpjNP2iHQ',
         label: 'Watch Rockin’ Playlist',
         newTitle: 'Rockin’ Through the 80s',
-        newCopy: 'Big hair, loud guitars, neon lights, stage energy, and the kind of rock-and-roll attitude that made the 80s impossible to ignore.'
+        newCopy: 'Big hair, loud guitars, neon lights, stage energy, and the kind of rock-and-roll attitude that made the 80s impossible to ignore.',
+        image: 'images/v2-video-rockin-through-80s.jpg',
+        position: 'center'
       },
       '80s Ladies Thought of the Day': {
         url: 'https://www.youtube.com/watch?v=JSdym55iuw4&list=PLhWH_tOZ8lWIJaaVsiuSd4BfTRS0EjFZ3',
@@ -145,6 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.video-lane-card').forEach((card) => {
       const title = card.querySelector('h3');
       const copy = card.querySelector('p');
+      const frame = card.querySelector('.video-frame');
       if (!title) return;
 
       const setup = playlistLinks[title.textContent.trim()];
@@ -156,6 +163,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (setup.newCopy && copy) {
         copy.textContent = setup.newCopy;
+      }
+
+      if (setup.image && frame) {
+        frame.style.backgroundImage = `linear-gradient(135deg, rgba(255,43,214,.28), rgba(0,229,255,.14)), url('${setup.image}')`;
+        frame.style.backgroundSize = 'cover';
+        frame.style.backgroundPosition = setup.position || 'center';
       }
 
       card.style.cursor = 'pointer';
