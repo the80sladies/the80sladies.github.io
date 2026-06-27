@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
       introImage.style.minHeight = '420px';
       introImage.style.backgroundImage = "linear-gradient(135deg, rgba(255,43,214,.18), rgba(0,229,255,.12)), url('images/v2-about-what-it-is-salon-group.jpg')";
       introImage.style.backgroundSize = 'cover';
-      introImage.style.backgroundPosition = 'center 22%';
+      introImage.style.backgroundPosition = 'center 48%';
     }
 
     const whyImage = Array.from(document.querySelectorAll('.about-page .image-slot')).find((slot) =>
