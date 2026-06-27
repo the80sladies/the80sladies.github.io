@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
       'Big Hair Emergencies': {
         url: 'https://www.youtube.com/watch?v=q0APn6bj6bQ&list=PLhWH_tOZ8lWLMjh0X0FH0jM36Xagm_OoQ',
         label: 'Watch Big Hair Playlist',
-        image: 'images/v2-video-big-hair-emergencies.jpg',
+        image: 'images/v2-video-shoulder-pads-gone-wild.jpg',
         position: 'center'
       },
       'Neon Fashion Moments': {
@@ -124,8 +124,8 @@ document.addEventListener('DOMContentLoaded', () => {
         url: 'https://www.youtube.com/watch?v=_m2uuKvPdyM&list=PLhWH_tOZ8lWLY5jnHIk86KeXN8fxcOh9t',
         label: 'Watch Shoulder Pads Playlist',
         newTitle: 'Shoulder Pads Gone Wild',
-        newCopy: 'Oversized shoulder pads, bold outfits, dramatic entrances, and the kind of fashion confidence only the 80s could get away with.',
-        image: 'images/v2-video-shoulder-pads-gone-wild.jpg',
+        newCopy: 'Oversized shoulder pads, bold outfits, dramatic mall entrances, and the kind of fashion confidence only the 80s could get away with.',
+        image: 'images/v2-video-shoulder-pads-mall.jpg',
         position: 'center'
       },
       'Mall, Arcade & Food Court Nostalgia': {
