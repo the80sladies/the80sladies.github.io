@@ -140,7 +140,9 @@ document.addEventListener('DOMContentLoaded', () => {
         url: 'https://www.youtube.com/watch?v=JSdym55iuw4&list=PLhWH_tOZ8lWIJaaVsiuSd4BfTRS0EjFZ3',
         label: 'Watch Phone Cord Playlist',
         newTitle: 'Phone Cord Emergencies',
-        newCopy: 'Tangled cords, dramatic calls, kitchen-wall phones, and the kind of 80s communication chaos only a landline could create.'
+        newCopy: 'Tangled cords, dramatic calls, kitchen-wall phones, and the kind of 80s communication chaos only a landline could create.',
+        image: 'images/v2-video-phone-cord-emergencies.jpg',
+        position: 'center'
       },
       'Retro Product Features': {
         url: 'https://www.tiktok.com/@the.80s.ladies/video/7652886761936260383',
