@@ -67,6 +67,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  if (document.body.classList.contains('about-page')) {
+    const finalHeadline = document.querySelector('.about-final-quote');
+
+    if (finalHeadline) {
+      finalHeadline.classList.add('neon-about-heading');
+      finalHeadline.style.fontSize = 'clamp(2rem, 4.5vw, 4.2rem)';
+      finalHeadline.style.lineHeight = '0.95';
+      finalHeadline.style.marginBottom = '1rem';
+    }
+  }
+
   if (document.body.classList.contains('home-page')) {
     const homeVideoCards = {
       'Big Hair Emergencies': {
