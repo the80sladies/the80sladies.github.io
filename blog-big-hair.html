@@ -7,37 +7,44 @@
   <title>Why 80s Big Hair Still Lives Rent-Free in Our Memories | The 80s Ladies Club</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/png" href="images/about-hairspray-profile.png" />
+  <style>
+    .blog-post-page .page-hero{position:relative;overflow:hidden;min-height:72vh;display:grid;align-items:center;background:radial-gradient(circle at 16% 18%,rgba(255,43,214,.32),transparent 34%),radial-gradient(circle at 86% 20%,rgba(0,229,255,.22),transparent 32%),linear-gradient(135deg,#070817 0%,#21083c 50%,#061124 100%)}
+    .blog-post-page .page-hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,43,214,.08) 1px,transparent 1px);background-size:68px 68px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.72),transparent 82%);pointer-events:none}
+    .blog-post-hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,.95fr) minmax(300px,.86fr);gap:clamp(2rem,5vw,4.5rem);align-items:center;width:min(1180px,92%);margin:0 auto;padding:6rem 0 4rem}
+    .blog-post-hero-copy{text-align:center;display:grid;justify-items:center;max-width:780px;margin-inline:auto}.blog-post-title,.blog-post-heading{display:inline-block;background:linear-gradient(90deg,var(--pink),var(--cyan),var(--green));-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 22px rgba(255,43,214,.45),0 0 34px rgba(0,229,255,.28);text-transform:uppercase;letter-spacing:.035em}.blog-post-title{font-size:clamp(2.35rem,6.1vw,5.4rem);line-height:.95;margin:0 0 1rem}.blog-post-hero-image{min-height:520px;border-radius:34px;border:1px solid rgba(0,229,255,.65);background-image:linear-gradient(135deg,rgba(255,43,214,.18),rgba(0,229,255,.12)),url('images/v2-video-shoulder-pads-gone-wild.jpg');background-size:cover;background-position:center 24%;box-shadow:0 26px 80px rgba(0,0,0,.5),var(--shadow-cyan);position:relative;overflow:hidden}.blog-post-hero-image::after{content:"BIG HAIR FOREVER";position:absolute;left:1.2rem;bottom:1.2rem;padding:.55rem .9rem;border-radius:999px;background:rgba(7,8,23,.8);border:1px solid rgba(255,43,214,.62);color:var(--white);font-weight:900;letter-spacing:.12em;font-size:.78rem;box-shadow:var(--shadow-pink)}
+    .article-shell{width:min(920px,92%);margin:0 auto}.article-card{padding:clamp(1.5rem,4vw,3.25rem);border-radius:34px;background:linear-gradient(145deg,rgba(13,27,61,.94),rgba(24,7,54,.9));border:1px solid rgba(0,229,255,.38);box-shadow:0 22px 80px rgba(0,0,0,.36),inset 0 0 34px rgba(255,43,214,.08)}.article-card p{font-size:clamp(1.05rem,2vw,1.22rem);line-height:1.8}.article-card h2{margin-top:2.3rem;margin-bottom:.75rem}.article-callout{margin:2rem 0;padding:1.5rem;border-radius:24px;background:radial-gradient(circle at 15% 20%,rgba(255,43,214,.25),transparent 42%),linear-gradient(145deg,rgba(7,8,23,.92),rgba(13,27,61,.86));border:1px solid rgba(255,43,214,.4);box-shadow:var(--shadow-pink);font-weight:800;color:var(--white)}.article-image-strip{min-height:360px;border-radius:30px;border:1px solid rgba(0,229,255,.42);background-image:linear-gradient(135deg,rgba(255,43,214,.18),rgba(0,229,255,.12)),url('images/v2-about-what-it-is-salon-group.jpg');background-size:cover;background-position:center 48%;margin:2rem 0;box-shadow:0 18px 60px rgba(0,0,0,.35)}.article-cta{text-align:center;display:grid;justify-items:center;margin-top:2.5rem;padding:clamp(1.5rem,4vw,2.5rem);border-radius:30px;background:radial-gradient(circle at 20% 15%,rgba(255,43,214,.22),transparent 38%),radial-gradient(circle at 80% 22%,rgba(0,229,255,.18),transparent 34%),linear-gradient(145deg,rgba(13,27,61,.94),rgba(24,7,54,.9));border:1px solid rgba(0,229,255,.42)}.article-cta .button-row{justify-content:center}@media(max-width:940px){.blog-post-hero-inner{grid-template-columns:1fr}.blog-post-hero-image{min-height:430px;order:-1}}
+  </style>
 </head>
-<body>
+<body class="blog-post-page">
   <header class="site-header">
     <a class="brand" href="index.html" aria-label="The 80s Ladies Club home"><span class="brand-mark">80s</span><span class="brand-text">The 80s Ladies Club</span></a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">☰</button>
-    <nav id="site-nav" class="site-nav" aria-label="Main navigation">
-      <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="videos.html">Videos</a><a class="active" href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a>
-    </nav>
+    <nav id="site-nav" class="site-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="videos.html">Videos</a><a class="active" href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
   </header>
   <main>
-    <section class="page-hero">
-      <p class="eyebrow">Beauty • Nostalgia • Big Hair</p>
-      <h1>Why 80s Big Hair Still Lives Rent-Free in Our Memories</h1>
-      <p class="page-copy">A love letter to hairspray clouds, teasing combs, salon gossip, neon confidence, and the glorious height of 80s hair.</p>
-      <div class="button-row"><a class="btn primary" href="blog.html">Back to Blog</a><a class="btn secondary" href="videos.html">Watch Videos</a></div>
-    </section>
-    <section class="content-section">
-      <article class="story-panel">
-        <p>There are hairstyles, and then there is 80s big hair. It did not simply sit on top of a head. It entered rooms first.</p>
-        <p>That is why big hair still lives rent-free in our memories. It was not just a beauty trend. It was a whole personality.</p>
-        <h2>It was confidence you could see from across the mall.</h2>
-        <p>Part of the magic of 80s hair was how fearless it felt. The bigger the bangs, the louder the message.</p>
-        <h2>The bathroom was basically a backstage dressing room.</h2>
-        <p>Getting ready could feel like an event all by itself. You did not just fix your hair. You built it.</p>
-        <h2>Hair salons were social clubs with blow dryers.</h2>
-        <p>The 80s salon had its own energy: magazines, gossip, hot rollers, big mirrors, and stylists who understood height.</p>
-        <h2>That is why The 80s Ladies Club keeps bringing it back.</h2>
-        <p>Big hair captures confidence, nostalgia, comedy, glamour, chaos, and a little bit of beautiful ridiculousness.</p>
-        <div class="button-row"><a class="btn primary" href="videos.html">Watch Videos</a><a class="btn secondary" href="https://the80sladies.etsy.com">Shop Etsy</a></div>
-      </article>
-    </section>
+    <section class="page-hero"><div class="blog-post-hero-inner"><div class="blog-post-hero-copy"><p class="eyebrow">Beauty • Nostalgia • Big Hair</p><h1 class="blog-post-title">Why 80s Big Hair Still Lives Rent-Free in Our Memories</h1><p class="page-copy">A love letter to hairspray clouds, teasing combs, salon gossip, neon confidence, and the glorious height of 80s hair.</p><div class="button-row"><a class="btn primary" href="blog.html">Back to Blog</a><a class="btn secondary" href="videos.html">Watch Videos</a></div></div><div class="blog-post-hero-image" aria-label="80s lady with big hair and hairspray"></div></div></section>
+    <section class="content-section"><article class="article-shell"><div class="article-card">
+      <p>There are hairstyles, and then there is 80s big hair. It did not simply sit on top of a head. It entered rooms first. It filled the mirror, owned the hallway, and made every picture feel like a music-video freeze frame.</p>
+      <p>That is why big hair still lives rent-free in our memories. It was not just a beauty trend. It was a whole personality. It said, “I am here, I am fabulous, and I brought backup hairspray.”</p>
+      <div class="article-callout">Big hair was not subtle. But honestly, neither was the decade.</div>
+      <h2 class="blog-post-heading">It was confidence you could see from across the mall.</h2>
+      <p>Part of the magic of 80s hair was how fearless it felt. The bigger the bangs, the louder the message. Women teased, sprayed, curled, crimped, flipped, feathered, and shaped their hair into something that felt almost architectural.</p>
+      <p>It matched the clothes perfectly. Shoulder pads needed hair that could keep up. Neon earrings needed a frame. A power blazer looked even stronger when the hair above it had enough volume to deserve its own fan club.</p>
+      <div class="article-image-strip" aria-label="80s salon with big hair"></div>
+      <h2 class="blog-post-heading">The bathroom was basically a backstage dressing room.</h2>
+      <p>Before filters and ring lights, there was the bathroom mirror. The counter was covered in brushes, curling irons, makeup, earrings, perfume, and at least one heroic can of hairspray standing by.</p>
+      <p>Getting ready could feel like an event all by itself. You did not just fix your hair. You built it. You negotiated with it. You sprayed it into place and hoped the weather understood the assignment.</p>
+      <h2 class="blog-post-heading">Hair salons were social clubs with blow dryers.</h2>
+      <p>The 80s salon had its own energy: magazines, gossip, hot rollers, big mirrors, and stylists who understood that “just a little volume” was only the beginning.</p>
+      <p>It was not only about looking good. It was about the ritual, the appointment, the reveal, and the feeling of walking out with hair so fresh and tall that the whole sidewalk became a runway.</p>
+      <h2 class="blog-post-heading">It was funny, dramatic, and completely unforgettable.</h2>
+      <p>Looking back, big hair is easy to laugh about, and that is part of why people still love it. It gave us school pictures with personality, prom photos with altitude, and family albums that look like everyone was secretly auditioning for a rock video.</p>
+      <p>But underneath the humor is something real. 80s big hair reminds people of a time when style felt physical, expressive, handmade, and brave. You had to commit. You had to tease. You had to spray. You had to believe.</p>
+      <h2 class="blog-post-heading">That is why The 80s Ladies Club keeps bringing it back.</h2>
+      <p>Big hair is one of the symbols at the heart of The 80s Ladies Club because it captures everything the brand loves: confidence, nostalgia, comedy, glamour, chaos, and a little bit of beautiful ridiculousness.</p>
+      <p>The world may have moved on to sleeker styles, but big hair never really left. It is still there in the memories, the jokes, the music videos, the old photos, the mall stories, and the people who still smile when someone says, “Big hair forever.”</p>
+      <div class="article-cta"><p class="eyebrow">Stay in the Club</p><h2 class="blog-post-heading">Big hair forever.</h2><p>Watch the videos, shop the retro gifts, and follow The 80s Ladies Club wherever the hairspray cloud drifts next.</p><div class="button-row"><a class="btn primary" href="videos.html">Watch Videos</a><a class="btn secondary" href="https://the80sladies.etsy.com">Shop Etsy</a><a class="btn secondary" href="https://www.tiktok.com/@the.80s.ladies">Follow TikTok</a></div></div>
+    </div></article></section>
   </main>
   <footer class="site-footer upgraded-footer"><div class="footer-logo">The 80s Ladies Club</div><p>© <span id="year"></span> The 80s Ladies Club. Big hair forever.</p></footer>
   <script src="js/script.js"></script>
