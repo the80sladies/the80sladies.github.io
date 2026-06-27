@@ -72,9 +72,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (finalHeadline) {
       finalHeadline.classList.add('neon-about-heading');
-      finalHeadline.style.fontSize = 'clamp(2rem, 4.5vw, 4.2rem)';
-      finalHeadline.style.lineHeight = '0.95';
-      finalHeadline.style.marginBottom = '1rem';
+      finalHeadline.style.fontSize = 'clamp(2rem, 3.7vw, 3.45rem)';
+      finalHeadline.style.lineHeight = '1.05';
+      finalHeadline.style.marginBottom = '1.15rem';
+      finalHeadline.style.maxWidth = '780px';
+    }
+
+    const finalSection = finalHeadline ? finalHeadline.closest('.feature-split') : null;
+    const finalButtons = finalSection ? finalSection.querySelector('.button-row') : null;
+
+    if (finalButtons) {
+      finalButtons.style.display = 'grid';
+      finalButtons.style.gridTemplateColumns = 'repeat(2, minmax(0, 220px))';
+      finalButtons.style.gap = '1rem';
+      finalButtons.style.justifyContent = 'center';
+      finalButtons.style.alignItems = 'center';
+      finalButtons.style.maxWidth = '520px';
+      finalButtons.style.marginTop = '1.5rem';
+    }
+
+    if (finalButtons) {
+      finalButtons.querySelectorAll('.btn').forEach((button) => {
+        button.style.width = '100%';
+        button.style.justifyContent = 'center';
+        button.style.textAlign = 'center';
+      });
     }
 
     const introImage = document.querySelector('.about-profile-image');
