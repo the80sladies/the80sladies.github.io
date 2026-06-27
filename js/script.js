@@ -76,6 +76,18 @@ document.addEventListener('DOMContentLoaded', () => {
       platformIntro.textContent = 'Follow the big hair trail across YouTube, TikTok, and Instagram — then come back here when you want the whole 80s Ladies Club universe in one neon-lit place.';
     }
 
+    const featuredLaneButtons = Array.from(document.querySelectorAll('.feature-split .button-row')).find((row) =>
+      row.querySelector('a[href*="youtube.com/channel"]') && row.querySelector('a[href*="tiktok.com/@the.80s.ladies"]')
+    );
+
+    if (featuredLaneButtons && !featuredLaneButtons.querySelector('a[href*="instagram.com/official80sladies"]')) {
+      const instagramButton = document.createElement('a');
+      instagramButton.className = 'btn secondary';
+      instagramButton.href = 'https://www.instagram.com/official80sladies';
+      instagramButton.textContent = 'Open Instagram';
+      featuredLaneButtons.appendChild(instagramButton);
+    }
+
     const playlistLinks = {
       'Big Hair Emergencies': {
         url: 'https://www.youtube.com/watch?v=q0APn6bj6bQ&list=PLhWH_tOZ8lWLMjh0X0FH0jM36Xagm_OoQ',
