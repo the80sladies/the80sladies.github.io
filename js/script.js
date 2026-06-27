@@ -77,6 +77,17 @@ document.addEventListener('DOMContentLoaded', () => {
       finalHeadline.style.marginBottom = '1rem';
     }
 
+    const introImage = document.querySelector('.about-profile-image');
+
+    if (introImage) {
+      introImage.classList.remove('round');
+      introImage.style.borderRadius = '30px';
+      introImage.style.minHeight = '420px';
+      introImage.style.backgroundImage = "linear-gradient(135deg, rgba(255,43,214,.18), rgba(0,229,255,.12)), url('images/v2-about-what-it-is-salon-group.jpg')";
+      introImage.style.backgroundSize = 'cover';
+      introImage.style.backgroundPosition = 'center 22%';
+    }
+
     const whyImage = Array.from(document.querySelectorAll('.about-page .image-slot')).find((slot) =>
       slot.getAttribute('style')?.includes('v2-car-wash-boombox.jpg')
     );
