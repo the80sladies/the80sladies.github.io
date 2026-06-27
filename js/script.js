@@ -67,6 +67,71 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  if (document.body.classList.contains('home-page')) {
+    const homeVideoCards = {
+      'Big Hair Emergencies': {
+        url: 'https://www.youtube.com/watch?v=q0APn6bj6bQ&list=PLhWH_tOZ8lWLMjh0X0FH0jM36Xagm_OoQ',
+        label: 'Watch Big Hair Playlist',
+        image: 'images/v2-video-shoulder-pads-gone-wild.jpg',
+        title: 'Big Hair Emergencies',
+        copy: 'Hairspray disasters, salon chaos, and gravity-defying hair with maximum neon attitude.',
+        position: 'center 24%'
+      },
+      'Fashion Moments': {
+        url: 'https://www.youtube.com/watch?v=LJP0NV4eMcw&list=PLhWH_tOZ8lWIDY3bHovmVXf2eAs8sYK8s',
+        label: 'Watch Fashion Playlist',
+        image: 'images/v2-lightning-earrings.jpg',
+        title: 'Neon Fashion Moments',
+        copy: 'Shoulder pads, earrings, bold makeup, wild outfits, and the kind of confidence only the 80s could deliver.',
+        position: 'center'
+      },
+      'Retro Mayhem': {
+        url: 'https://www.youtube.com/watch?v=4xm4D6w88KA&list=PLhWH_tOZ8lWL_0aaE0e0XZJpUpjNP2iHQ',
+        label: 'Watch Rockin’ Playlist',
+        image: 'images/v2-video-rockin-through-80s.jpg',
+        title: 'Rockin’ Through the 80s',
+        copy: 'Big hair, loud guitars, neon lights, stage energy, and rock-and-roll attitude from the 80s universe.',
+        position: 'center 20%'
+      }
+    };
+
+    document.querySelectorAll('.home-video-section .video-card').forEach((card) => {
+      const title = card.querySelector('h3');
+      const copy = card.querySelector('p');
+      const frame = card.querySelector('.video-frame');
+      if (!title) return;
+
+      const setup = homeVideoCards[title.textContent.trim()];
+      if (!setup) return;
+
+      title.textContent = setup.title;
+      if (copy) copy.textContent = setup.copy;
+
+      if (frame) {
+        frame.style.backgroundImage = `linear-gradient(135deg, rgba(255,43,214,.26), rgba(0,229,255,.14)), url('${setup.image}')`;
+        frame.style.backgroundSize = 'cover';
+        frame.style.backgroundPosition = setup.position || 'center';
+      }
+
+      card.style.cursor = 'pointer';
+      card.setAttribute('role', 'link');
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('aria-label', setup.label);
+
+      const openLink = () => {
+        window.location.href = setup.url;
+      };
+
+      card.addEventListener('click', openLink);
+      card.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openLink();
+        }
+      });
+    });
+  }
+
   if (document.body.classList.contains('videos-page')) {
     const platformIntro = Array.from(document.querySelectorAll('.section-heading p')).find((paragraph) =>
       paragraph.textContent.trim() === 'The videos live across the main social channels. The website is the official hub that ties everything together.'
