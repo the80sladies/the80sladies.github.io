@@ -3,10 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="The official home of The 80s Ladies Club — big hair, neon nights, retro videos, 80s nostalgia, fashion, humor, and retro-inspired products." />
-  <title>The 80s Ladies Club | Big Hair. Neon Nights. Endless Nostalgia.</title>
+  <meta name="description" content="The official home of The 80s Ladies Club: 80s nostalgia, big hair, neon fashion, retro videos, mall memories, funny throwback moments, and 80s-inspired gifts." />
+  <meta name="keywords" content="80s nostalgia, 80s ladies, The 80s Ladies Club, big hair, 80s fashion, neon fashion, retro videos, mall memories, boombox, cassette tapes, retro gifts, 80s gifts, Etsy retro shop" />
+  <meta name="author" content="The 80s Ladies Club" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.the80sladiesclub.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="The 80s Ladies Club" />
+  <meta property="og:title" content="The 80s Ladies Club | 80s Nostalgia, Big Hair & Retro Gifts" />
+  <meta property="og:description" content="Step into The 80s Ladies Club for big hair, neon nights, retro videos, mall memories, 80s fashion, funny nostalgia, and retro-inspired gifts." />
+  <meta property="og:url" content="https://www.the80sladiesclub.com/" />
+  <meta property="og:image" content="https://www.the80sladiesclub.com/images/v2-brand-banner-80s-ladies.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The 80s Ladies Club | 80s Nostalgia, Big Hair & Retro Gifts" />
+  <meta name="twitter:description" content="Big hair, neon nights, retro videos, mall memories, funny throwback moments, and 80s-inspired gifts." />
+  <meta name="twitter:image" content="https://www.the80sladiesclub.com/images/v2-brand-banner-80s-ladies.jpg" />
+  <title>The 80s Ladies Club | 80s Nostalgia, Big Hair & Retro Gifts</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/png" href="images/about-hairspray-profile.png" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "The 80s Ladies Club",
+      "url": "https://www.the80sladiesclub.com/",
+      "description": "An 80s nostalgia website and retro community celebrating big hair, neon fashion, retro videos, mall memories, funny throwback moments, and 80s-inspired gifts.",
+      "sameAs": [
+        "https://www.tiktok.com/@the.80s.ladies",
+        "https://www.instagram.com/official80sladies",
+        "https://www.youtube.com/channel/UC9fSL5o2ANB6UnJM-C2evTA",
+        "https://the80sladies.etsy.com",
+        "https://www.buymeacoffee.com/the80sladies"
+      ]
+    }
+  </script>
   <style>
     .home-hero-inner {
       display: grid;
@@ -51,419 +81,53 @@
       letter-spacing: 0.035em;
     }
 
-    .neon-title.hero-title-refined .title-small {
-      font-size: 0.74em;
-      letter-spacing: 0.08em;
-    }
-
-    .neon-title.hero-title-refined .title-big {
-      font-size: 1em;
-    }
-
-    .neon-title.hero-title-refined .title-club {
-      font-size: 0.58em;
-      letter-spacing: 0.22em;
-      padding-left: 0.22em;
-      color: var(--cyan);
-      text-shadow: var(--shadow-cyan), 0 0 30px rgba(255, 43, 214, 0.7);
-    }
+    .neon-title.hero-title-refined .title-small { font-size: 0.74em; letter-spacing: 0.08em; }
+    .neon-title.hero-title-refined .title-big { font-size: 1em; }
+    .neon-title.hero-title-refined .title-club { font-size: 0.58em; letter-spacing: 0.22em; padding-left: 0.22em; color: var(--cyan); text-shadow: var(--shadow-cyan), 0 0 30px rgba(255, 43, 214, 0.7); }
 
     .welcome-headline,
-    .neon-section-headline {
-      display: inline-block;
-      margin-bottom: 0.35rem;
-      background: linear-gradient(90deg, var(--pink), var(--cyan), var(--green));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      text-shadow: 0 0 22px rgba(255, 43, 214, 0.45), 0 0 34px rgba(0, 229, 255, 0.28);
-      letter-spacing: 0.035em;
-      text-transform: uppercase;
-    }
-
-    .hero-palm {
-      display: none;
-    }
-
-    .hero-retro-icon {
-      position: absolute;
-      z-index: 1;
-      display: grid;
-      place-items: center;
-      width: clamp(76px, 8vw, 132px);
-      height: clamp(76px, 8vw, 132px);
-      border-radius: 28px;
-      font-size: clamp(2.4rem, 5vw, 4.8rem);
-      background: radial-gradient(circle at 30% 20%, rgba(255, 43, 214, 0.22), rgba(0, 229, 255, 0.08) 45%, rgba(3, 8, 22, 0.04) 70%);
-      border: 1px solid rgba(0, 229, 255, 0.16);
-      box-shadow: 0 0 28px rgba(255, 43, 214, 0.16), 0 0 36px rgba(0, 229, 255, 0.12);
-      opacity: 0.42;
-      filter: saturate(1.25);
-      pointer-events: none;
-      animation: floatRetro 8s ease-in-out infinite;
-    }
-
-    .hero-retro-icon.cassette {
-      left: 3%;
-      top: 34%;
-      transform: rotate(-12deg);
-      color: var(--pink);
-    }
-
-    .hero-retro-icon.spray {
-      left: 9%;
-      bottom: 15%;
-      transform: rotate(10deg);
-      animation-delay: -2s;
-      color: var(--green);
-    }
-
-    .hero-retro-icon.boombox {
-      right: 5%;
-      top: 36%;
-      transform: rotate(9deg);
-      animation-delay: -4s;
-      color: var(--cyan);
-    }
-
-    .hero-retro-icon.tape-two {
-      right: 11%;
-      bottom: 16%;
-      transform: rotate(-10deg);
-      animation-delay: -6s;
-      color: var(--pink);
-    }
-
-    @keyframes floatRetro {
-      0%, 100% {
-        translate: 0 0;
-      }
-      50% {
-        translate: 0 -18px;
-      }
-    }
-
-    .hero-brand-stack {
-      position: relative;
-      min-height: 520px;
-      display: grid;
-      place-items: center;
-    }
-
-    .profile-orbit {
-      position: relative;
-      z-index: 3;
-      width: min(330px, 78vw);
-      aspect-ratio: 1;
-      border-radius: 50%;
-      background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.18), rgba(0, 229, 255, 0.14)), url('images/about-hairspray-profile.png');
-      background-size: cover;
-      background-position: center;
-      border: 4px solid rgba(255, 43, 214, 0.7);
-      box-shadow: var(--shadow-pink), var(--shadow-cyan), 0 30px 80px rgba(0, 0, 0, 0.48);
-    }
-
-    .profile-orbit::after {
-      content: "";
-      position: absolute;
-      inset: -16px;
-      border-radius: 50%;
-      border: 1px solid rgba(57, 255, 20, 0.55);
-      box-shadow: var(--shadow-green);
-      pointer-events: none;
-    }
-
-    .floating-polaroid {
-      position: absolute;
-      z-index: 2;
-      width: min(210px, 34vw);
-      aspect-ratio: 0.72;
-      border-radius: 18px;
-      background-size: cover;
-      background-position: center;
-      border: 3px solid rgba(248, 247, 255, 0.86);
-      box-shadow: 0 20px 55px rgba(0, 0, 0, 0.55), 0 0 20px rgba(255, 43, 214, 0.35);
-      transition: transform 220ms ease, box-shadow 220ms ease;
-    }
-
-    .floating-polaroid:hover {
-      transform: translateY(-6px) rotate(0deg) scale(1.03);
-      box-shadow: var(--shadow-cyan), 0 24px 60px rgba(0, 0, 0, 0.58);
-    }
-
-    .floating-polaroid.one {
-      left: 0;
-      top: 0.4rem;
-      transform: rotate(-8deg);
-      background-image: linear-gradient(135deg, rgba(255,43,214,.12), rgba(0,229,255,.08)), url('images/v2-car-wash-boombox.jpg');
-    }
-
-    .floating-polaroid.two {
-      right: 0;
-      bottom: 0.4rem;
-      transform: rotate(7deg);
-      background-image: linear-gradient(135deg, rgba(255,43,214,.12), rgba(0,229,255,.08)), url('images/v2-rock-concert-ladies.jpg');
-    }
-
-    .hero-badge {
-      position: absolute;
-      z-index: 4;
-      right: 4%;
-      top: 9%;
-      display: grid;
-      place-items: center;
-      width: 112px;
-      height: 112px;
-      border-radius: 50%;
-      text-align: center;
-      padding: 0.75rem;
-      background: linear-gradient(135deg, var(--pink), var(--purple));
-      color: var(--white);
-      font-weight: 900;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      box-shadow: var(--shadow-pink);
-      transform: rotate(10deg);
-    }
-
-    .image-collage .car-wash-card {
-      background-image: linear-gradient(135deg, rgba(255,43,214,.18), rgba(0,229,255,.12)), url('images/v2-car-wash-boombox.jpg') !important;
-    }
-
-    .image-collage .concert-card {
-      background-image: linear-gradient(135deg, rgba(255,43,214,.18), rgba(0,229,255,.12)), url('images/v2-rock-concert-ladies.jpg') !important;
-    }
-
-    .image-collage .mug-card {
-      background-image: linear-gradient(135deg, rgba(255,43,214,.18), rgba(0,229,255,.12)), url('images/v2-mug-hairspray-bad-decisions.jpg') !important;
-    }
-
-    @media (max-width: 940px) {
-      .home-hero-inner {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .hero-copy-block {
-        justify-items: center;
-      }
-
-      .hero-buttons {
-        justify-content: center;
-      }
-
-      .hero-brand-stack {
-        min-height: 430px;
-        order: -1;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .hero-brand-stack {
-        min-height: 360px;
-      }
-
-      .floating-polaroid {
-        width: 150px;
-        opacity: 0.85;
-      }
-
-      .hero-badge {
-        width: 86px;
-        height: 86px;
-        font-size: 0.62rem;
-      }
-
-      .hero-retro-icon {
-        width: 68px;
-        height: 68px;
-        border-radius: 18px;
-        font-size: 2.2rem;
-        opacity: 0.28;
-      }
-    }
+    .neon-section-headline { display: inline-block; margin-bottom: 0.35rem; background: linear-gradient(90deg, var(--pink), var(--cyan), var(--green)); -webkit-background-clip: text; background-clip: text; color: transparent; text-shadow: 0 0 22px rgba(255, 43, 214, 0.45), 0 0 34px rgba(0, 229, 255, 0.28); letter-spacing: 0.035em; text-transform: uppercase; }
+    .hero-palm { display: none; }
+    .hero-retro-icon { position: absolute; z-index: 1; display: grid; place-items: center; width: clamp(76px, 8vw, 132px); height: clamp(76px, 8vw, 132px); border-radius: 28px; font-size: clamp(2.4rem, 5vw, 4.8rem); background: radial-gradient(circle at 30% 20%, rgba(255, 43, 214, 0.22), rgba(0, 229, 255, 0.08) 45%, rgba(3, 8, 22, 0.04) 70%); border: 1px solid rgba(0, 229, 255, 0.16); box-shadow: 0 0 28px rgba(255, 43, 214, 0.16), 0 0 36px rgba(0, 229, 255, 0.12); opacity: 0.42; filter: saturate(1.25); pointer-events: none; animation: floatRetro 8s ease-in-out infinite; }
+    .hero-retro-icon.cassette { left: 3%; top: 34%; transform: rotate(-12deg); color: var(--pink); }
+    .hero-retro-icon.spray { left: 9%; bottom: 15%; transform: rotate(10deg); animation-delay: -2s; color: var(--green); }
+    .hero-retro-icon.boombox { right: 5%; top: 36%; transform: rotate(9deg); animation-delay: -4s; color: var(--cyan); }
+    .hero-retro-icon.tape-two { right: 11%; bottom: 16%; transform: rotate(-10deg); animation-delay: -6s; color: var(--pink); }
+    @keyframes floatRetro { 0%, 100% { translate: 0 0; } 50% { translate: 0 -18px; } }
+    .hero-brand-stack { position: relative; min-height: 520px; display: grid; place-items: center; }
+    .profile-orbit { position: relative; z-index: 3; width: min(330px, 78vw); aspect-ratio: 1; border-radius: 50%; background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.18), rgba(0, 229, 255, 0.14)), url('images/about-hairspray-profile.png'); background-size: cover; background-position: center; border: 4px solid rgba(255, 43, 214, 0.7); box-shadow: var(--shadow-pink), var(--shadow-cyan), 0 30px 80px rgba(0, 0, 0, 0.48); }
+    .profile-orbit::after { content: ""; position: absolute; inset: -16px; border-radius: 50%; border: 1px solid rgba(57, 255, 20, 0.55); box-shadow: var(--shadow-green); pointer-events: none; }
+    .floating-polaroid { position: absolute; z-index: 2; width: min(210px, 34vw); aspect-ratio: 0.72; border-radius: 18px; background-size: cover; background-position: center; border: 3px solid rgba(248, 247, 255, 0.86); box-shadow: 0 20px 55px rgba(0, 0, 0, 0.55), 0 0 20px rgba(255, 43, 214, 0.35); transition: transform 220ms ease, box-shadow 220ms ease; }
+    .floating-polaroid:hover { transform: translateY(-6px) rotate(0deg) scale(1.03); box-shadow: var(--shadow-cyan), 0 24px 60px rgba(0, 0, 0, 0.58); }
+    .floating-polaroid.one { left: 0; top: 0.4rem; transform: rotate(-8deg); background-image: linear-gradient(135deg, rgba(255,43,214,.12), rgba(0,229,255,.08)), url('images/v2-car-wash-boombox.jpg'); }
+    .floating-polaroid.two { right: 0; bottom: 0.4rem; transform: rotate(7deg); background-image: linear-gradient(135deg, rgba(255,43,214,.12), rgba(0,229,255,.08)), url('images/v2-rock-concert-ladies.jpg'); }
+    .hero-badge { position: absolute; z-index: 4; right: 4%; top: 9%; display: grid; place-items: center; width: 112px; height: 112px; border-radius: 50%; text-align: center; padding: 0.75rem; background: linear-gradient(135deg, var(--pink), var(--purple)); color: var(--white); font-weight: 900; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; box-shadow: var(--shadow-pink); transform: rotate(10deg); }
+    .image-collage .car-wash-card { background-image: linear-gradient(135deg, rgba(255,43,214,.18), rgba(0,229,255,.12)), url('images/v2-car-wash-boombox.jpg') !important; }
+    .image-collage .concert-card { background-image: linear-gradient(135deg, rgba(255,43,214,.18), rgba(0,229,255,.12)), url('images/v2-rock-concert-ladies.jpg') !important; }
+    .image-collage .mug-card { background-image: linear-gradient(135deg, rgba(255,43,214,.18), rgba(0,229,255,.12)), url('images/v2-mug-hairspray-bad-decisions.jpg') !important; }
+    @media (max-width: 940px) { .home-hero-inner { grid-template-columns: 1fr; text-align: center; } .hero-copy-block { justify-items: center; } .hero-buttons { justify-content: center; } .hero-brand-stack { min-height: 430px; order: -1; } }
+    @media (max-width: 560px) { .hero-brand-stack { min-height: 360px; } .floating-polaroid { width: 150px; opacity: 0.85; } .hero-badge { width: 86px; height: 86px; font-size: 0.62rem; } .hero-retro-icon { width: 68px; height: 68px; border-radius: 18px; font-size: 2.2rem; opacity: 0.28; } }
   </style>
 </head>
 <body class="home-page">
   <header class="site-header">
-    <a class="brand" href="index.html" aria-label="The 80s Ladies Club home">
-      <span class="brand-mark">80s</span>
-      <span class="brand-text">The 80s Ladies Club</span>
-    </a>
+    <a class="brand" href="index.html" aria-label="The 80s Ladies Club home"><span class="brand-mark">80s</span><span class="brand-text">The 80s Ladies Club</span></a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">☰</button>
-    <nav id="site-nav" class="site-nav" aria-label="Main navigation">
-      <a class="active" href="index.html">Home</a>
-      <a href="shop.html">Shop</a>
-      <a href="videos.html">Videos</a>
-      <a href="blog.html">Blog</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <nav id="site-nav" class="site-nav" aria-label="Main navigation"><a class="active" href="index.html">Home</a><a href="shop.html">Shop</a><a href="videos.html">Videos</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
   </header>
-
   <main>
-    <section class="home-hero" aria-label="Welcome to The 80s Ladies Club">
-      <div class="hero-stars" aria-hidden="true"></div>
-      <div class="hero-grid" aria-hidden="true"></div>
-      <div class="hero-retro-icon cassette" aria-hidden="true">📼</div>
-      <div class="hero-retro-icon spray" aria-hidden="true">📼</div>
-      <div class="hero-retro-icon boombox" aria-hidden="true">📻</div>
-      <div class="hero-retro-icon tape-two" aria-hidden="true">💿</div>
-
-      <div class="home-hero-inner">
-        <div class="hero-copy-block">
-          <div class="hero-lockup">
-            <p class="eyebrow hero-eyebrow">Official Home Of</p>
-            <h1 class="neon-title hero-title-refined"><span class="title-small">The 80s</span><span class="title-big">Ladies</span><span class="title-club">Club</span></h1>
-          </div>
-          <p class="hero-tagline">Big Hair. Neon Nights. Endless Nostalgia.</p>
-          <p class="hero-copy">Welcome to the official home of The 80s Ladies Club. Relive the fun, fashion, music, mall memories, wild hairstyles, and unforgettable moments that made the 1980s legendary.</p>
-          <div class="button-row hero-buttons">
-            <a class="btn primary" href="videos.html">💖 Watch Videos</a>
-            <a class="btn secondary" href="shop.html">🛍️ Shop Etsy</a>
-            <a class="btn secondary" href="https://www.instagram.com/official80sladies">📷 Follow Instagram</a>
-          </div>
-        </div>
-
-        <div class="hero-brand-stack" aria-label="The 80s Ladies Club brand imagery">
-          <div class="floating-polaroid one" aria-hidden="true"></div>
-          <div class="profile-orbit" aria-label="The 80s Ladies profile image"></div>
-          <div class="floating-polaroid two" aria-hidden="true"></div>
-          <div class="hero-badge">Big Hair Forever</div>
-        </div>
-      </div>
-
-      <a class="scroll-cue" href="#welcome-club" aria-label="Scroll to enter the club">
-        <span>▼</span>
-        <strong>Enter the Club</strong>
-      </a>
+    <section class="home-hero" aria-label="The 80s Ladies Club official 80s nostalgia homepage">
+      <div class="hero-stars" aria-hidden="true"></div><div class="hero-grid" aria-hidden="true"></div><div class="hero-retro-icon cassette" aria-hidden="true">📼</div><div class="hero-retro-icon spray" aria-hidden="true">📼</div><div class="hero-retro-icon boombox" aria-hidden="true">📻</div><div class="hero-retro-icon tape-two" aria-hidden="true">💿</div>
+      <div class="home-hero-inner"><div class="hero-copy-block"><div class="hero-lockup"><p class="eyebrow hero-eyebrow">Official Home Of</p><h1 class="neon-title hero-title-refined"><span class="title-small">The 80s</span><span class="title-big">Ladies</span><span class="title-club">Club</span></h1></div><p class="hero-tagline">Big Hair. Neon Nights. Endless Nostalgia.</p><p class="hero-copy">Welcome to the official home of The 80s Ladies Club: an 80s nostalgia community for big hair, neon fashion, retro videos, mall memories, funny throwback moments, and 80s-inspired gifts.</p><div class="button-row hero-buttons"><a class="btn primary" href="videos.html">💖 Watch Videos</a><a class="btn secondary" href="shop.html">🛍️ Shop Etsy</a><a class="btn secondary" href="https://www.instagram.com/official80sladies">📷 Follow Instagram</a></div></div><div class="hero-brand-stack" aria-label="The 80s Ladies Club big hair and retro nostalgia imagery"><div class="floating-polaroid one" aria-hidden="true"></div><div class="profile-orbit" aria-label="The 80s Ladies Club big hair profile image"></div><div class="floating-polaroid two" aria-hidden="true"></div><div class="hero-badge">Big Hair Forever</div></div></div>
+      <a class="scroll-cue" href="#welcome-club" aria-label="Scroll to enter The 80s Ladies Club"><span>▼</span><strong>Enter the Club</strong></a>
     </section>
-
-    <section id="welcome-club" class="content-section welcome-club-section">
-      <div class="welcome-copy">
-        <p class="eyebrow">Welcome to the Club</p>
-        <h2 class="welcome-headline">Big Hair Lives Here.</h2>
-        <p>This is a growing retro community celebrating everything we loved about the women, fashion, music, malls, movies, hairstyles, and unforgettable everyday memories of the 1980s.</p>
-        <p>Whether you lived through it or simply wish you had, pull up a chair, tease that hair, and make yourself at home.</p>
-      </div>
-      <div class="image-collage" aria-label="The 80s Ladies visual collage">
-        <div class="collage-card wide car-wash-card"></div>
-        <div class="collage-card" style="background-image: linear-gradient(135deg, rgba(255,43,214,.18), rgba(0,229,255,.12)), url('images/about-hairspray-profile.png');"></div>
-        <div class="collage-card tall concert-card"></div>
-        <div class="collage-card mug-card"></div>
-      </div>
-    </section>
-
-    <section class="content-section alt-section home-video-section">
-      <div class="section-heading split-heading">
-        <div>
-          <p class="eyebrow">Featured Videos</p>
-          <h2 class="neon-section-headline">Shorts, reels, and retro chaos.</h2>
-        </div>
-        <a class="text-link" href="videos.html">See All Videos →</a>
-      </div>
-      <div class="card-grid three">
-        <article class="video-card showcase-card">
-          <div class="video-frame feature-thumb" style="background-image: linear-gradient(135deg, rgba(255,43,214,.26), rgba(0,229,255,.14)), url('images/about-hairspray-profile.png');"><span class="play-pill">▶</span></div>
-          <h3>Big Hair Emergencies</h3>
-          <p>Hairspray disasters, salon chaos, and gravity-defying hair with maximum neon attitude.</p>
-        </article>
-        <article class="video-card showcase-card">
-          <div class="video-frame feature-thumb" style="background-image: linear-gradient(135deg, rgba(255,43,214,.26), rgba(0,229,255,.14)), url('images/v2-lightning-earrings.jpg'); background-size: cover; background-position: center;"><span class="play-pill">▶</span></div>
-          <h3>Fashion Moments</h3>
-          <p>Shoulder pads, earrings, bold makeup, and outfits that refused to whisper.</p>
-        </article>
-        <article class="video-card showcase-card">
-          <div class="video-frame feature-thumb" style="background-image: linear-gradient(135deg, rgba(255,43,214,.26), rgba(0,229,255,.14)), url('images/v2-rock-concert-ladies.jpg');"><span class="play-pill">▶</span></div>
-          <h3>Retro Mayhem</h3>
-          <p>Boomboxes, malls, music memories, and funny throwback moments from the 80s universe.</p>
-        </article>
-      </div>
-      <div class="button-row center-buttons">
-        <a class="btn primary" href="https://www.youtube.com/channel/UC9fSL5o2ANB6UnJM-C2evTA">Visit YouTube</a>
-        <a class="btn secondary" href="https://www.tiktok.com/@the.80s.ladies">Watch on TikTok</a>
-      </div>
-    </section>
-
-    <section class="content-section featured-favorites-section">
-      <div class="section-heading split-heading">
-        <div>
-          <p class="eyebrow">Featured Favorites</p>
-          <h2 class="neon-section-headline">Retro finds for neon souls.</h2>
-        </div>
-        <a class="text-link" href="shop.html">Visit Shop →</a>
-      </div>
-      <div class="product-showcase-grid">
-        <article class="product-card showcase-card">
-          <div class="product-image" style="background-image: linear-gradient(135deg, rgba(255,43,214,.22), rgba(0,229,255,.12)), url('images/shop-big-hair-shirt.png'); background-size: cover; background-position: center top;"></div>
-          <h3>Apparel</h3>
-          <p>Wear the big-hair energy.</p>
-          <a href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=59007457">Shop Apparel</a>
-        </article>
-        <article class="product-card showcase-card">
-          <div class="product-image" style="background-image: linear-gradient(135deg, rgba(255,43,214,.22), rgba(0,229,255,.12)), url('images/v2-mug-hairspray-bad-decisions.jpg'); background-size: cover; background-position: center;"></div>
-          <h3>Mugs</h3>
-          <p>Caffeine, nostalgia, and neon.</p>
-          <a href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=58990802">Shop Mugs</a>
-        </article>
-        <article class="product-card showcase-card">
-          <div class="product-image" style="background-image: linear-gradient(135deg, rgba(255,43,214,.22), rgba(0,229,255,.12)), url('images/v2-sticker-boombox.jpg'); background-size: cover; background-position: center;"></div>
-          <h3>Stickers</h3>
-          <p>Small gifts with big 80s attitude.</p>
-          <a href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=58990800">Shop Stickers</a>
-        </article>
-        <article class="product-card showcase-card">
-          <div class="product-image" style="background-image: linear-gradient(135deg, rgba(255,43,214,.22), rgba(0,229,255,.12)), url('images/max-volume-poster.png'); background-size: cover; background-position: center;"></div>
-          <h3>Posters</h3>
-          <p>Wall art with max volume glam.</p>
-          <a href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=59036339">Shop Posters</a>
-        </article>
-        <article class="product-card showcase-card">
-          <div class="product-image" style="background-image: linear-gradient(135deg, rgba(255,43,214,.22), rgba(0,229,255,.12)), url('images/v2-can-cooler-lake.jpg'); background-size: cover; background-position: center;"></div>
-          <h3>Can Coolers</h3>
-          <p>For porch nights and retro parties.</p>
-          <a href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=59038197">Shop Coolers</a>
-        </article>
-      </div>
-      <div class="button-row center-buttons">
-        <a class="btn primary" href="https://the80sladies.etsy.com">Open Etsy Store</a>
-      </div>
-    </section>
-
-    <section class="content-section explore-section alt-section">
-      <div class="section-heading">
-        <p class="eyebrow">Explore the Club</p>
-        <h2 class="neon-section-headline">Pick your neon lane.</h2>
-      </div>
-      <div class="card-grid five-lane-grid">
-        <a class="lane-card" href="shop.html"><span>🛍️</span><strong>Shop</strong><small>Retro products</small></a>
-        <a class="lane-card" href="videos.html"><span>📺</span><strong>Videos</strong><small>Short-form chaos</small></a>
-        <a class="lane-card" href="blog.html"><span>📚</span><strong>Blog</strong><small>Retro reads</small></a>
-        <a class="lane-card" href="about.html"><span>💄</span><strong>About</strong><small>Brand story</small></a>
-        <a class="lane-card" href="contact.html"><span>☎️</span><strong>Contact</strong><small>Every official link</small></a>
-      </div>
-    </section>
-
-    <section class="social-strip home-social-strip" aria-label="Social media links">
-      <p class="eyebrow">Join the Community</p>
-      <h2 class="neon-section-headline">Follow The 80s Ladies Club</h2>
-      <p>Daily videos, community posts, products, nostalgia, and a whole lot of hairspray.</p>
-      <div class="social-links">
-        <a href="https://www.tiktok.com/@the.80s.ladies">TikTok</a>
-        <a href="https://www.instagram.com/official80sladies">Instagram</a>
-        <a href="https://www.youtube.com/channel/UC9fSL5o2ANB6UnJM-C2evTA">YouTube</a>
-        <a href="https://the80sladies.etsy.com">Etsy</a>
-        <a href="https://www.buymeacoffee.com/the80sladies">Buy Me a Coffee</a>
-      </div>
-    </section>
+    <section id="welcome-club" class="content-section welcome-club-section"><div class="welcome-copy"><p class="eyebrow">Welcome to the Club</p><h2 class="welcome-headline">Big Hair Lives Here.</h2><p>This is a growing 80s nostalgia community celebrating everything we loved about the women, fashion, music, malls, movies, hairstyles, and unforgettable everyday memories of the 1980s.</p><p>Whether you lived through it or simply wish you had, pull up a chair, tease that hair, and make yourself at home.</p></div><div class="image-collage" aria-label="80s nostalgia collage with big hair, boomboxes, retro fashion, and 80s Ladies Club imagery"><div class="collage-card wide car-wash-card"></div><div class="collage-card" style="background-image: linear-gradient(135deg, rgba(255,43,214,.18), rgba(0,229,255,.12)), url('images/about-hairspray-profile.png');"></div><div class="collage-card tall concert-card"></div><div class="collage-card mug-card"></div></div></section>
+    <section class="content-section alt-section home-video-section"><div class="section-heading split-heading"><div><p class="eyebrow">Featured Videos</p><h2 class="neon-section-headline">Shorts, reels, and retro chaos.</h2></div><a class="text-link" href="videos.html">See All Videos →</a></div><div class="card-grid three"><article class="video-card showcase-card"><div class="video-frame feature-thumb" style="background-image: linear-gradient(135deg, rgba(255,43,214,.26), rgba(0,229,255,.14)), url('images/about-hairspray-profile.png');"><span class="play-pill">▶</span></div><h3>Big Hair Emergencies</h3><p>Hairspray disasters, salon chaos, and gravity-defying hair with maximum neon attitude.</p></article><article class="video-card showcase-card"><div class="video-frame feature-thumb" style="background-image: linear-gradient(135deg, rgba(255,43,214,.26), rgba(0,229,255,.14)), url('images/v2-lightning-earrings.jpg'); background-size: cover; background-position: center;"><span class="play-pill">▶</span></div><h3>Fashion Moments</h3><p>Shoulder pads, earrings, bold makeup, and outfits that refused to whisper.</p></article><article class="video-card showcase-card"><div class="video-frame feature-thumb" style="background-image: linear-gradient(135deg, rgba(255,43,214,.26), rgba(0,229,255,.14)), url('images/v2-rock-concert-ladies.jpg');"><span class="play-pill">▶</span></div><h3>Retro Mayhem</h3><p>Boomboxes, malls, music memories, and funny throwback moments from the 80s universe.</p></article></div><div class="button-row center-buttons"><a class="btn primary" href="https://www.youtube.com/channel/UC9fSL5o2ANB6UnJM-C2evTA">Visit YouTube</a><a class="btn secondary" href="https://www.tiktok.com/@the.80s.ladies">Watch on TikTok</a></div></section>
+    <section class="content-section featured-favorites-section"><div class="section-heading split-heading"><div><p class="eyebrow">Featured Favorites</p><h2 class="neon-section-headline">Retro finds for neon souls.</h2></div><a class="text-link" href="shop.html">Visit Shop →</a></div><div class="product-showcase-grid"><article class="product-card showcase-card"><div class="product-image" style="background-image: linear-gradient(135deg, rgba(255,43,214,.22), rgba(0,229,255,.12)), url('images/shop-big-hair-shirt.png'); background-size: cover; background-position: center top;"></div><h3>Apparel</h3><p>Wear the big-hair energy.</p><a href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=59007457">Shop Apparel</a></article><article class="product-card showcase-card"><div class="product-image" style="background-image: linear-gradient(135deg, rgba(255,43,214,.22), rgba(0,229,255,.12)), url('images/v2-mug-hairspray-bad-decisions.jpg'); background-size: cover; background-position: center;"></div><h3>Mugs</h3><p>Caffeine, nostalgia, and neon.</p><a href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=58990802">Shop Mugs</a></article><article class="product-card showcase-card"><div class="product-image" style="background-image: linear-gradient(135deg, rgba(255,43,214,.22), rgba(0,229,255,.12)), url('images/v2-sticker-boombox.jpg'); background-size: cover; background-position: center;"></div><h3>Stickers</h3><p>Small gifts with big 80s attitude.</p><a href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=58990800">Shop Stickers</a></article><article class="product-card showcase-card"><div class="product-image" style="background-image: linear-gradient(135deg, rgba(255,43,214,.22), rgba(0,229,255,.12)), url('images/max-volume-poster.png'); background-size: cover; background-position: center;"></div><h3>Posters</h3><p>Wall art with max volume glam.</p><a href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=59036339">Shop Posters</a></article><article class="product-card showcase-card"><div class="product-image" style="background-image: linear-gradient(135deg, rgba(255,43,214,.22), rgba(0,229,255,.12)), url('images/v2-can-cooler-lake.jpg'); background-size: cover; background-position: center;"></div><h3>Can Coolers</h3><p>For porch nights and retro parties.</p><a href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=59038197">Shop Coolers</a></article></div><div class="button-row center-buttons"><a class="btn primary" href="https://the80sladies.etsy.com">Open Etsy Store</a></div></section>
+    <section class="content-section explore-section alt-section"><div class="section-heading"><p class="eyebrow">Explore the Club</p><h2 class="neon-section-headline">Pick your neon lane.</h2></div><div class="card-grid five-lane-grid"><a class="lane-card" href="shop.html"><span>🛍️</span><strong>Shop</strong><small>80s-inspired retro gifts</small></a><a class="lane-card" href="videos.html"><span>📺</span><strong>Videos</strong><small>Short-form 80s chaos</small></a><a class="lane-card" href="blog.html"><span>📚</span><strong>Blog</strong><small>80s nostalgia articles</small></a><a class="lane-card" href="about.html"><span>💄</span><strong>About</strong><small>Brand story</small></a><a class="lane-card" href="contact.html"><span>☎️</span><strong>Contact</strong><small>Every official link</small></a></div></section>
+    <section class="social-strip home-social-strip" aria-label="The 80s Ladies Club social media and official links"><p class="eyebrow">Join the Community</p><h2 class="neon-section-headline">Follow The 80s Ladies Club</h2><p>Daily 80s videos, community posts, retro products, nostalgia, neon fashion, mall memories, and a whole lot of hairspray.</p><div class="social-links"><a href="https://www.tiktok.com/@the.80s.ladies">TikTok</a><a href="https://www.instagram.com/official80sladies">Instagram</a><a href="https://www.youtube.com/channel/UC9fSL5o2ANB6UnJM-C2evTA">YouTube</a><a href="https://the80sladies.etsy.com">Etsy</a><a href="https://www.buymeacoffee.com/the80sladies">Buy The Ladies a Coffee</a></div></section>
   </main>
-
-  <footer class="site-footer upgraded-footer">
-    <div class="footer-logo">The 80s Ladies Club</div>
-    <p>© <span id="year"></span> The 80s Ladies Club. Built with neon, nostalgia, and too much hairspray.</p>
-  </footer>
-
+  <footer class="site-footer upgraded-footer"><div class="footer-logo">The 80s Ladies Club</div><p>© <span id="year"></span> The 80s Ladies Club. Built with neon, nostalgia, and too much hairspray.</p></footer>
   <script src="js/script.js"></script>
 </body>
 </html>
