@@ -25,351 +25,52 @@
     {"@context":"https://schema.org","@type":"CollectionPage","name":"The 80s Ladies Club Shop","url":"https://www.the80sladiesclub.com/shop.html","description":"The official 80s Ladies Club shop page for 80s-inspired gifts, retro graphic apparel, neon mugs, throwback stickers, wall posters, can coolers, totes, and accessories sold through Etsy.","isPartOf":{"@type":"WebSite","name":"The 80s Ladies Club","url":"https://www.the80sladiesclub.com/"},"about":["80s gifts","retro gifts","80s nostalgia","big hair","neon fashion","Etsy retro shop"],"sameAs":["https://the80sladies.etsy.com","https://www.tiktok.com/@the.80s.ladies","https://www.instagram.com/official80sladies","https://www.youtube.com/channel/UC9fSL5o2ANB6UnJM-C2evTA"]}
   </script>
   <style>
-    .shop-page .page-hero {
-      position: relative;
-      overflow: hidden;
-      min-height: 70vh;
-      display: grid;
-      align-items: center;
-      background:
-        radial-gradient(circle at 12% 18%, rgba(255, 43, 214, 0.28), transparent 32%),
-        radial-gradient(circle at 84% 10%, rgba(0, 229, 255, 0.22), transparent 30%),
-        radial-gradient(circle at 74% 78%, rgba(57, 255, 20, 0.12), transparent 28%),
-        linear-gradient(135deg, #090b24 0%, #210a3d 48%, #070817 100%);
-    }
-
-    .shop-page .page-hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(0, 229, 255, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 43, 214, 0.08) 1px, transparent 1px);
-      background-size: 70px 70px;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.65), transparent 78%);
-      pointer-events: none;
-    }
-
-    .shop-hero-inner {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.78fr);
-      gap: clamp(1.5rem, 4vw, 3.5rem);
-      align-items: center;
-      width: min(1180px, 92%);
-      margin: 0 auto;
-      padding: 6rem 0 4rem;
-    }
-
-    .shop-hero-copy {
-      text-align: left;
-    }
-
-    .shop-neon-headline,
-    .neon-shop-heading {
-      display: inline-block;
-      background: linear-gradient(90deg, var(--pink), var(--cyan), var(--green));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      text-shadow: 0 0 22px rgba(255, 43, 214, 0.45), 0 0 34px rgba(0, 229, 255, 0.28);
-      text-transform: uppercase;
-      letter-spacing: 0.035em;
-    }
-
-    .shop-neon-headline {
-      font-size: clamp(3rem, 8vw, 7rem);
-      line-height: 0.9;
-      margin: 0 0 1rem;
-    }
-
-    .shop-hero-copy .page-copy {
-      max-width: 720px;
-      margin-left: 0;
-      font-size: clamp(1.05rem, 2vw, 1.3rem);
-    }
-
-    .shop-hero-showcase {
-      position: relative;
-      min-height: 500px;
-    }
-
-    .shop-feature-image {
-      position: absolute;
-      border-radius: 30px;
-      border: 3px solid rgba(255, 255, 255, 0.72);
-      background-size: cover;
-      background-position: center;
-      box-shadow: 0 26px 70px rgba(0, 0, 0, 0.55), var(--shadow-pink);
-    }
-
-    .shop-feature-image.main {
-      inset: 4% 10% auto auto;
-      width: min(330px, 78vw);
-      aspect-ratio: 0.82;
-      background-image: linear-gradient(135deg, rgba(255,43,214,.14), rgba(0,229,255,.10)), url('images/v2-mug-hairspray-bad-decisions.jpg');
-      z-index: 3;
-      transform: rotate(4deg);
-    }
-
-    .shop-feature-image.side-one {
-      left: 0;
-      bottom: 6%;
-      width: min(245px, 50vw);
-      aspect-ratio: 0.9;
-      background-image: linear-gradient(135deg, rgba(255,43,214,.16), rgba(0,229,255,.12)), url('images/v2-can-cooler-lake.jpg');
-      z-index: 2;
-      transform: rotate(-8deg);
-      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.5), var(--shadow-cyan);
-    }
-
-    .shop-feature-image.side-two {
-      right: 0;
-      bottom: 0;
-      width: min(230px, 46vw);
-      aspect-ratio: 1;
-      background-image: linear-gradient(135deg, rgba(255,43,214,.16), rgba(0,229,255,.12)), url('images/v2-sticker-boombox.jpg');
-      z-index: 1;
-      transform: rotate(8deg);
-      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.5), var(--shadow-green);
-    }
-
-    .shop-badge {
-      position: absolute;
-      left: 10%;
-      top: 8%;
-      z-index: 4;
-      width: 118px;
-      height: 118px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      text-align: center;
-      padding: 0.85rem;
-      background: linear-gradient(135deg, var(--pink), var(--purple));
-      color: var(--white);
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: 0.78rem;
-      box-shadow: var(--shadow-pink);
-      transform: rotate(-10deg);
-    }
-
-    .shop-intro-strip {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-
-    .shop-mini-card {
-      padding: 1.2rem;
-      border-radius: 24px;
-      background: rgba(255, 255, 255, 0.055);
-      border: 1px solid rgba(0, 229, 255, 0.18);
-      box-shadow: 0 18px 55px rgba(0, 0, 0, 0.24);
-    }
-
-    .shop-mini-card strong {
-      display: block;
-      color: var(--cyan);
-      margin-bottom: 0.35rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .shop-category-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.25rem;
-    }
-
-    .shop-category-card .product-image {
-      min-height: 260px;
-    }
-
-    .shop-category-card h3 {
-      color: var(--white);
-      text-shadow: 0 0 14px rgba(255, 43, 214, 0.35);
-    }
-
-    @media (max-width: 940px) {
-      .shop-hero-inner {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .shop-hero-copy {
-        text-align: center;
-      }
-
-      .shop-hero-copy .page-copy {
-        margin-inline: auto;
-      }
-
-      .shop-hero-showcase {
-        min-height: 430px;
-      }
-
-      .shop-intro-strip,
-      .shop-category-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .shop-hero-showcase {
-        min-height: 360px;
-      }
-
-      .shop-feature-image.main {
-        width: 240px;
-        right: 8%;
-      }
-
-      .shop-feature-image.side-one,
-      .shop-feature-image.side-two {
-        width: 165px;
-      }
-
-      .shop-badge {
-        width: 90px;
-        height: 90px;
-        font-size: 0.62rem;
-      }
-    }
+    .shop-page .page-hero {position: relative; overflow: hidden; min-height: 70vh; display: grid; align-items: center; background: radial-gradient(circle at 12% 18%, rgba(255, 43, 214, 0.28), transparent 32%), radial-gradient(circle at 84% 10%, rgba(0, 229, 255, 0.22), transparent 30%), radial-gradient(circle at 74% 78%, rgba(57, 255, 20, 0.12), transparent 28%), linear-gradient(135deg, #090b24 0%, #210a3d 48%, #070817 100%);}
+    .shop-page .page-hero::before {content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(0, 229, 255, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 43, 214, 0.08) 1px, transparent 1px); background-size: 70px 70px; mask-image: linear-gradient(to bottom, rgba(0,0,0,0.65), transparent 78%); pointer-events: none;}
+    .shop-hero-inner {position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 0.78fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; width: min(1180px, 92%); margin: 0 auto; padding: 6rem 0 4rem;}
+    .shop-hero-copy {text-align: left;}
+    .shop-neon-headline, .neon-shop-heading {display: inline-block; background: linear-gradient(90deg, var(--pink), var(--cyan), var(--green)); -webkit-background-clip: text; background-clip: text; color: transparent; text-shadow: 0 0 22px rgba(255, 43, 214, 0.45), 0 0 34px rgba(0, 229, 255, 0.28); text-transform: uppercase; letter-spacing: 0.035em;}
+    .shop-neon-headline {font-size: clamp(3rem, 8vw, 7rem); line-height: 0.9; margin: 0 0 1rem;}
+    .shop-hero-copy .page-copy {max-width: 720px; margin-left: 0; font-size: clamp(1.05rem, 2vw, 1.3rem);}
+    .shop-hero-showcase {position: relative; min-height: 500px;}
+    .shop-feature-image {position: absolute; border-radius: 30px; border: 3px solid rgba(255, 255, 255, 0.72); background-size: cover; background-position: center; box-shadow: 0 26px 70px rgba(0, 0, 0, 0.55), var(--shadow-pink);}
+    .shop-feature-image.main {inset: 4% 10% auto auto; width: min(330px, 78vw); aspect-ratio: 0.82; background-image: linear-gradient(135deg, rgba(255,43,214,.14), rgba(0,229,255,.10)), url('images/v2-mug-hairspray-bad-decisions.jpg'); z-index: 3; transform: rotate(4deg);}
+    .shop-feature-image.side-one {left: 0; bottom: 6%; width: min(245px, 50vw); aspect-ratio: 0.9; background-image: linear-gradient(135deg, rgba(255,43,214,.16), rgba(0,229,255,.12)), url('images/v2-can-cooler-lake.jpg'); z-index: 2; transform: rotate(-8deg); box-shadow: 0 22px 60px rgba(0, 0, 0, 0.5), var(--shadow-cyan);}
+    .shop-feature-image.side-two {right: 0; bottom: 0; width: min(230px, 46vw); aspect-ratio: 1; background-image: linear-gradient(135deg, rgba(255,43,214,.16), rgba(0,229,255,.12)), url('images/v2-sticker-boombox.jpg'); z-index: 1; transform: rotate(8deg); box-shadow: 0 22px 60px rgba(0, 0, 0, 0.5), var(--shadow-green);}
+    .shop-badge {position: absolute; left: 10%; top: 8%; z-index: 4; width: 118px; height: 118px; border-radius: 50%; display: grid; place-items: center; text-align: center; padding: 0.85rem; background: linear-gradient(135deg, var(--pink), var(--purple)); color: var(--white); font-weight: 900; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.78rem; box-shadow: var(--shadow-pink); transform: rotate(-10deg);}
+    .shop-intro-strip {display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem;}
+    .shop-mini-card {padding: 1.2rem; border-radius: 24px; background: rgba(255, 255, 255, 0.055); border: 1px solid rgba(0, 229, 255, 0.18); box-shadow: 0 18px 55px rgba(0, 0, 0, 0.24);}
+    .shop-mini-card strong {display: block; color: var(--cyan); margin-bottom: 0.35rem; text-transform: uppercase; letter-spacing: 0.08em;}
+    .shop-category-grid {display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem;}
+    .shop-category-card .product-image {min-height: 260px;}
+    .shop-category-card h3 {color: var(--white); text-shadow: 0 0 14px rgba(255, 43, 214, 0.35);}
+    @media (max-width: 940px) {.shop-hero-inner {grid-template-columns: 1fr; text-align: center;} .shop-hero-copy {text-align: center;} .shop-hero-copy .page-copy {margin-inline: auto;} .shop-hero-showcase {min-height: 430px;} .shop-intro-strip, .shop-category-grid {grid-template-columns: 1fr;}}
+    @media (max-width: 560px) {.shop-hero-showcase {min-height: 360px;} .shop-feature-image.main {width: 240px; right: 8%;} .shop-feature-image.side-one, .shop-feature-image.side-two {width: 165px;} .shop-badge {width: 90px; height: 90px; font-size: 0.62rem;}}
   </style>
 </head>
 <body class="shop-page">
   <header class="site-header">
     <a class="brand" href="index.html" aria-label="The 80s Ladies Club home"><span class="brand-mark">80s</span><span class="brand-text">The 80s Ladies Club</span></a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">☰</button>
-    <nav id="site-nav" class="site-nav" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a class="active" href="shop.html">Shop</a>
-      <a href="videos.html">Videos</a>
-      <a href="blog.html">Blog</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <nav id="site-nav" class="site-nav" aria-label="Main navigation"><a href="index.html">Home</a><a class="active" href="shop.html">Shop</a><a href="videos.html">Videos</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
   </header>
-
   <main>
     <section class="page-hero" aria-label="The 80s Ladies Club official retro gift shop">
-      <div class="shop-hero-inner">
-        <div class="shop-hero-copy">
-          <p class="eyebrow">The Official Gift Shop</p>
-          <h1 class="shop-neon-headline">Shop the Neon.</h1>
-          <p class="page-copy">Shop 80s-inspired gifts from The 80s Ladies Club: retro graphic apparel, neon mugs, throwback stickers, wall posters, can coolers, totes, and accessories packed with big-hair confidence, hairspray humor, and retro attitude.</p>
-          <div class="button-row">
-            <a class="btn primary" href="https://the80sladies.etsy.com">Open Etsy Store</a>
-            <a class="btn secondary" href="#collections">Browse Collections</a>
-          </div>
-        </div>
-        <div class="shop-hero-showcase" aria-label="Featured 80s Ladies Club retro gifts including mugs, can coolers, and stickers">
-          <div class="shop-badge">Retro Finds</div>
-          <div class="shop-feature-image main" aria-label="The 80s Ladies Club neon mug gift"></div>
-          <div class="shop-feature-image side-one" aria-label="The 80s Ladies Club 80s can cooler"></div>
-          <div class="shop-feature-image side-two" aria-label="The 80s Ladies Club boombox sticker"></div>
-        </div>
-      </div>
+      <div class="shop-hero-inner"><div class="shop-hero-copy"><p class="eyebrow">The Official Gift Shop</p><h1 class="shop-neon-headline">Shop the Neon.</h1><p class="page-copy">Shop 80s-inspired gifts from The 80s Ladies Club: retro graphic apparel, neon mugs, throwback stickers, wall posters, can coolers, totes, and accessories packed with big-hair confidence, hairspray humor, and retro attitude.</p><div class="button-row"><a class="btn primary" href="https://the80sladies.etsy.com">Open Etsy Store</a><a class="btn secondary" href="#collections">Browse Collections</a></div></div><div class="shop-hero-showcase" aria-label="Featured 80s Ladies Club retro gifts including mugs, can coolers, and stickers"><div class="shop-badge">Retro Finds</div><div class="shop-feature-image main" aria-label="The 80s Ladies Club neon mug gift"></div><div class="shop-feature-image side-one" aria-label="The 80s Ladies Club 80s can cooler"></div><div class="shop-feature-image side-two" aria-label="The 80s Ladies Club boombox sticker"></div></div></div>
     </section>
-
-    <section class="content-section alt-section">
-      <div class="section-heading">
-        <p class="eyebrow">Why Shop Here?</p>
-        <h2 class="neon-shop-heading">Made for big-hair believers.</h2>
-      </div>
-      <div class="shop-intro-strip">
-        <div class="shop-mini-card">
-          <strong>Brand Vibe</strong>
-          <p>Every item is built around the same 80s Ladies Club energy people recognize from the videos: big hair, neon color, throwback humor, and retro confidence.</p>
-        </div>
-        <div class="shop-mini-card">
-          <strong>Gift Friendly</strong>
-          <p>Easy retro gifts for 80s kids, nostalgia fans, big-hair queens, cassette lovers, mall-memory collectors, and neon souls.</p>
-        </div>
-        <div class="shop-mini-card">
-          <strong>Sold on Etsy</strong>
-          <p>This site shows the official collections. Etsy handles checkout, current product details, shipping information, and availability.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="collections" class="content-section">
-      <div class="section-heading">
-        <p class="eyebrow">Product Collections</p>
-        <h2 class="neon-shop-heading">Pick your retro treasure.</h2>
-      </div>
-      <div class="shop-category-grid">
-        <article class="product-card shop-category-card">
-          <div class="product-image" style="background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.22), rgba(0, 229, 255, 0.12)), url('images/shop-big-hair-shirt.png'); background-size: cover; background-position: center top;" aria-label="80s Ladies Club retro graphic apparel and big hair shirt"></div>
-          <h3>Retro Graphic Apparel</h3>
-          <p>80s-inspired shirts and apparel made for big-hair confidence, neon attitude, throwback humor, and everyday retro style.</p>
-          <a class="btn secondary" href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=59007457">Shop Apparel</a>
-        </article>
-        <article class="product-card shop-category-card">
-          <div class="product-image" style="background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.22), rgba(0, 229, 255, 0.12)), url('data:image/webp;base64,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'); background-size: cover; background-position: center;" aria-label="80s Ladies Club car magnet on the back of a retro 80s car"></div>
-          <h3>80s Magnets</h3>
-          <p>Retro magnets made for big hair, bold drivers, and totally 80s attitude on the road.</p>
-          <a class="btn secondary" href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt">Shop Magnets</a>
-        </article>
-        <article class="product-card shop-category-card">
-          <div class="product-image" style="background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.22), rgba(0, 229, 255, 0.12)), url('images/v2-mug-hairspray-bad-decisions.jpg'); background-size: cover; background-position: center;" aria-label="80s Ladies Club neon coffee mug"></div>
-          <h3>Neon Morning Mugs</h3>
-          <p>Retro coffee mugs for people who believe caffeine, hairspray, big hair, and 80s nostalgia belong in the same routine.</p>
-          <a class="btn secondary" href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=58990802">Shop Mugs</a>
-        </article>
-        <article class="product-card shop-category-card">
-          <div class="product-image" style="background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.22), rgba(0, 229, 255, 0.12)), url('images/v2-sticker-boombox.jpg'); background-size: cover; background-position: center;" aria-label="80s Ladies Club boombox retro sticker"></div>
-          <h3>Throwback Stickers</h3>
-          <p>Cassette-inspired, funny, and retro sticker designs ready for laptops, notebooks, bottles, mini coolers, and 80s-themed gifts.</p>
-          <a class="btn secondary" href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=58990800">Shop Stickers</a>
-        </article>
-        <article class="product-card shop-category-card">
-          <div class="product-image" style="background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.22), rgba(0, 229, 255, 0.12)), url('images/v2-can-cooler-lake.jpg'); background-size: cover; background-position: center;" aria-label="80s Ladies Club neon can cooler"></div>
-          <h3>80s Can Coolers</h3>
-          <p>Neon drink coolers for cookouts, lake days, porch nights, retro parties, and anyone who loves an 80s party vibe.</p>
-          <a class="btn secondary" href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=59038197">Shop Can Coolers</a>
-        </article>
-        <article class="product-card shop-category-card">
-          <div class="product-image" style="background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.22), rgba(0, 229, 255, 0.12)), url('images/max-volume-poster.png'); background-size: cover; background-position: center;" aria-label="80s Ladies Club retro wall poster"></div>
-          <h3>Retro Wall Posters</h3>
-          <p>80s wall art made for glam rooms, nostalgia corners, creative spaces, and bedrooms that need more neon.</p>
-          <a class="btn secondary" href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=59036339">Shop Posters</a>
-        </article>
-        <article class="product-card shop-category-card">
-          <div class="product-image" style="background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.22), rgba(0, 229, 255, 0.12)), url('images/club-logo.png'); background-size: contain; background-repeat: no-repeat; background-position: center;" aria-label="80s Ladies Club tote bags and retro accessories"></div>
-          <h3>80s Ladies Accessories</h3>
-          <p>Reusable totes and accessories for shopping, errands, flea markets, thrift trips, and carrying your retro personality.</p>
-          <a class="btn secondary" href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=59007461">Shop Accessories</a>
-        </article>
-      </div>
-    </section>
-
-    <section class="content-section alt-section">
-      <div class="feature-split">
-        <div class="image-slot" style="min-height: 420px; background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.16), rgba(0, 229, 255, 0.12)), url('images/v2-car-wash-boombox.jpg'); background-size: cover; background-position: center;" aria-label="80s Ladies Club boombox and retro nostalgia artwork"></div>
-        <div>
-          <p class="eyebrow">Full Etsy Collection</p>
-          <h2 class="neon-shop-heading">Take the club with you.</h2>
-          <p>All current 80s Ladies Club products live on Etsy, including retro apparel, mugs, stickers, posters, can coolers, and accessories. This website is the official brand hub, while Etsy handles shopping, checkout, shipping details, and product availability.</p>
-          <div class="button-row">
-            <a class="btn primary" href="https://the80sladies.etsy.com">Open Etsy Store</a>
-            <a class="btn secondary" href="index.html">Back to Home</a>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section class="content-section alt-section"><div class="section-heading"><p class="eyebrow">Why Shop Here?</p><h2 class="neon-shop-heading">Made for big-hair believers.</h2></div><div class="shop-intro-strip"><div class="shop-mini-card"><strong>Brand Vibe</strong><p>Every item is built around the same 80s Ladies Club energy people recognize from the videos: big hair, neon color, throwback humor, and retro confidence.</p></div><div class="shop-mini-card"><strong>Gift Friendly</strong><p>Easy retro gifts for 80s kids, nostalgia fans, big-hair queens, cassette lovers, mall-memory collectors, and neon souls.</p></div><div class="shop-mini-card"><strong>Sold on Etsy</strong><p>This site shows the official collections. Etsy handles checkout, current product details, shipping information, and availability.</p></div></div></section>
+    <section id="collections" class="content-section"><div class="section-heading"><p class="eyebrow">Product Collections</p><h2 class="neon-shop-heading">Pick your retro treasure.</h2></div><div class="shop-category-grid">
+        <article class="product-card shop-category-card"><div class="product-image" style="background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.22), rgba(0, 229, 255, 0.12)), url('images/shop-big-hair-shirt.png'); background-size: cover; background-position: center top;" aria-label="80s Ladies Club retro graphic apparel and big hair shirt"></div><h3>Retro Graphic Apparel</h3><p>80s-inspired shirts and apparel made for big-hair confidence, neon attitude, throwback humor, and everyday retro style.</p><a class="btn secondary" href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=59007457">Shop Apparel</a></article>
+        <article class="product-card shop-category-card"><div class="product-image" style="background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.22), rgba(0, 229, 255, 0.12)), url('images/v2-car-wash-boombox.jpg'); background-size: cover; background-position: center;" aria-label="80s Ladies Club retro magnet collection"></div><h3>80s Magnets</h3><p>Retro magnets made for big hair, bold drivers, and totally 80s attitude on the road.</p><a class="btn secondary" href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=59305709">Shop Magnets</a></article>
+        <article class="product-card shop-category-card"><div class="product-image" style="background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.22), rgba(0, 229, 255, 0.12)), url('images/v2-mug-hairspray-bad-decisions.jpg'); background-size: cover; background-position: center;" aria-label="80s Ladies Club neon coffee mug"></div><h3>Neon Morning Mugs</h3><p>Retro coffee mugs for people who believe caffeine, hairspray, big hair, and 80s nostalgia belong in the same routine.</p><a class="btn secondary" href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=58990802">Shop Mugs</a></article>
+        <article class="product-card shop-category-card"><div class="product-image" style="background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.22), rgba(0, 229, 255, 0.12)), url('images/v2-sticker-boombox.jpg'); background-size: cover; background-position: center;" aria-label="80s Ladies Club boombox retro sticker"></div><h3>Throwback Stickers</h3><p>Cassette-inspired, funny, and retro sticker designs ready for laptops, notebooks, bottles, mini coolers, and 80s-themed gifts.</p><a class="btn secondary" href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=58990800">Shop Stickers</a></article>
+        <article class="product-card shop-category-card"><div class="product-image" style="background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.22), rgba(0, 229, 255, 0.12)), url('images/v2-can-cooler-lake.jpg'); background-size: cover; background-position: center;" aria-label="80s Ladies Club neon can cooler"></div><h3>80s Can Coolers</h3><p>Neon drink coolers for cookouts, lake days, porch nights, retro parties, and anyone who loves an 80s party vibe.</p><a class="btn secondary" href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=59038197">Shop Can Coolers</a></article>
+        <article class="product-card shop-category-card"><div class="product-image" style="background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.22), rgba(0, 229, 255, 0.12)), url('images/max-volume-poster.png'); background-size: cover; background-position: center;" aria-label="80s Ladies Club retro wall poster"></div><h3>Retro Wall Posters</h3><p>80s wall art made for glam rooms, nostalgia corners, creative spaces, and bedrooms that need more neon.</p><a class="btn secondary" href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=59036339">Shop Posters</a></article>
+        <article class="product-card shop-category-card"><div class="product-image" style="background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.22), rgba(0, 229, 255, 0.12)), url('images/club-logo.png'); background-size: contain; background-repeat: no-repeat; background-position: center;" aria-label="80s Ladies Club tote bags and retro accessories"></div><h3>80s Ladies Accessories</h3><p>Reusable totes and accessories for shopping, errands, flea markets, thrift trips, and carrying your retro personality.</p><a class="btn secondary" href="https://www.etsy.com/shop/the80sladies/?etsrc=sdt&section_id=59007461">Shop Accessories</a></article>
+      </div></section>
+    <section class="content-section alt-section"><div class="feature-split"><div class="image-slot" style="min-height: 420px; background-image: linear-gradient(135deg, rgba(255, 43, 214, 0.16), rgba(0, 229, 255, 0.12)), url('images/v2-car-wash-boombox.jpg'); background-size: cover; background-position: center;" aria-label="80s Ladies Club boombox and retro nostalgia artwork"></div><div><p class="eyebrow">Full Etsy Collection</p><h2 class="neon-shop-heading">Take the club with you.</h2><p>All current 80s Ladies Club products live on Etsy, including retro apparel, mugs, stickers, posters, can coolers, and accessories. This website is the official brand hub, while Etsy handles shopping, checkout, shipping details, and product availability.</p><div class="button-row"><a class="btn primary" href="https://the80sladies.etsy.com">Open Etsy Store</a><a class="btn secondary" href="index.html">Back to Home</a></div></div></div></section>
   </main>
-
-  <footer class="site-footer upgraded-footer">
-    <div class="footer-logo">The 80s Ladies Club</div>
-    <p>© <span id="year"></span> The 80s Ladies Club. Shop retro gifts, 80s nostalgia, and big-hair attitude on Etsy.</p>
-  </footer>
-
+  <footer class="site-footer upgraded-footer"><div class="footer-logo">The 80s Ladies Club</div><p>© <span id="year"></span> The 80s Ladies Club. Shop retro gifts, 80s nostalgia, and big-hair attitude on Etsy.</p></footer>
   <script src="js/script.js"></script>
 </body>
 </html>
